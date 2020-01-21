@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/zkrowiak/Downloads/dev/java/lib/JDK18"
+		}
+	],
+	"settings": {
+		"objectscript.conn": {
+			"active": true,
+			"label": "LOCAL",
+			"host": "localhost",
+			"port": 52773,
+			"username": "SuperUser",
+			"password": "sys",
+			"ns": "USER",
+			"https": false
+		  }
+	}
+}

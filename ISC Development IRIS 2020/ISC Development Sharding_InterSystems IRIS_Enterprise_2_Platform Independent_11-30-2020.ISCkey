@@ -1,0 +1,18 @@
+[ConfigFile]
+FileType=InterSystems License Rev-A.1
+LicenseID=654321
+
+[License]
+LicenseCapacity=InterSystems IRIS 2019.1, Enterprise:2, Concurrent User, Platform Independent
+CustomerName=ISC Development Sharding
+OrderNumber=54321
+ExpirationDate=11/30/2020
+AuthorizationKey=412470000020000020000000000A1DD4F11164020F14003
+MachineID=
+
+
+[License Characteristics]
+Platform Independent
+Non-Production
+Multi-Server license
+Sharding

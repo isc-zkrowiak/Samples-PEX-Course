@@ -1,0 +1,18 @@
+[ConfigFile]
+FileType=InterSystems License Rev-A.1
+LicenseID=654321
+
+[License]
+LicenseCapacity=InterSystems IRIS 2019.1, Enterprise:1000, Concurrent User, Docker(Ubuntu)
+CustomerName=ISC Development Container Sharding
+OrderNumber=54321
+ExpirationDate=11/30/2020
+AuthorizationKey=412650010000010000000000000DD5CA019217020F14003
+MachineID=
+
+
+[License Characteristics]
+Docker(Ubuntu)
+Non-Production
+Multi-Server license
+Sharding

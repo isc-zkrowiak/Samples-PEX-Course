@@ -1,0 +1,44 @@
+The mvn clean install should build it. Here's mine.
+
+Your message is ready to be sent with the following file or link attachments:
+
+target.zip
+
+
+Note: To protect against computer viruses, e-mail programs may prevent sending or receiving certain types of file attachments.  Check your e-mail security settings to determine how attachments are handled.
+
+
+
+
+Additions to PEX readme.md
+
+First install Java and Maven if  you don't have them
+
+Add intersystems-jdbc-3.1.0.jar and intersystems-gateway-3.1.0.jar to the local maven repository with these commands:
+
+`mvn install:install-file -Dfile="PEX/Java/src/main/java/com/intersystems/lib/intersystems-gateway-3.1.0.jar" -DgroupId=com.intersystems -DartifactId=intersystems-gateway -Dversion=3.1.0 -Dpackaging=jar
+mvn install:install-file -Dfile="PEX/Java/src/main/java/com/intersystems/lib/intersystems-jdbc-3.1.0.jar" -DgroupId=com.intersystems -DartifactId=intersystems-jdbc -Dversion=3.1.0 -Dpackaging=jar
+Build the Java project under Java directory. It is a Maven project
+  
+  2.1 In command line, change directory to download-dir\PEX\Java
+  2.2 mvn clean install
+
+-----Original Message-----
+From: Zack Krowiak <Zachary.Krowiak@intersystems.com>
+Sent: Tuesday, January 14, 2020 1:13 PM
+To: Joshua Goldman <Joshua.Goldman@intersystems.com>
+Subject: Re: Emailing: PEX.zip
+
+Thank you!
+
+On 1/14/20, 11:58 AM, "Joshua Goldman" <Joshua.Goldman@intersystems.com> wrote:
+
+      
+    Your message is ready to be sent with the following file or link attachments: here are the demo files from perforce
+    
+    PEX.zip
+    
+    
+    Note: To protect against computer viruses, e-mail programs may prevent sending or receiving certain types of file attachments.  Check your e-mail security settings to determine how attachments are handled.
+
+    path to java home: /usr/lib/jvm/java-8-openjdk-amd64/jre
