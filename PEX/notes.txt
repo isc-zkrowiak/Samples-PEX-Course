@@ -42,3 +42,7 @@ On 1/14/20, 11:58 AM, "Joshua Goldman" <Joshua.Goldman@intersystems.com> wrote:
     Note: To protect against computer viruses, e-mail programs may prevent sending or receiving certain types of file attachments.  Check your e-mail security settings to determine how attachments are handled.
 
     path to java home: /usr/lib/jvm/java-8-openjdk-amd64/jre
+
+    classpaths:
+
+    /datavol/PEX/Java/src/lib/intersystems-gateway-3.0.0.jar:/datavol/PEX/Java/src/lib/intersystems-jdbc-3.0.0.jar:/datavol/PEX/Java/bin:/datavol/PEX/bin/gson-2.8.5.jar

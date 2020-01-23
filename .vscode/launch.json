@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Request",
+            "request": "launch",
+            "mainClass": "com.intersystems.demo.pex.Request",
+            "projectName": "intersystems-demo-PEX"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testClass",
+            "request": "launch",
+            "mainClass": "com.intersystems.demo.pex.testClass",
+            "projectName": "intersystems-demo-PEX"
+        }
+    ]
+}

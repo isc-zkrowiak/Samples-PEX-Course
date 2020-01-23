@@ -14,8 +14,8 @@
 			"host": "localhost",
 			"port": 52773,
 			"username": "SuperUser",
-			"password": "sys",
-			"ns": "USER",
+			"password": "SYS",
+			"ns": "INTEROP",
 			"https": false
 		  }
 	}

@@ -11,4 +11,9 @@ public class Request extends com.intersystems.enslib.pex.Message {
 		this.requestString = requestString;
 	}
 	
+	public static void main(String[] args) {
+    
+        System.out.println("Hello World");
+
+}
 }

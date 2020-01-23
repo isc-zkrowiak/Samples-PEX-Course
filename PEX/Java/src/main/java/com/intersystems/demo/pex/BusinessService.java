@@ -20,4 +20,10 @@ public class BusinessService extends com.intersystems.enslib.pex.BusinessService
 		return "...demo.pex.BusinessService:OnProcessInput() echos";
 	}
 
+	public static void main(String[] args) {
+    
+        System.out.println("Hello World");
+
+}
+
 }

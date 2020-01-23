@@ -1,8 +1,8 @@
-FROM docker.iscinternal.com/intersystems/iris:2020.1.0.192.0
+FROM docker.iscinternal.com/intersystems/iris:2020.1.0-latest
 
 USER root
-RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
 
+RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
 
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk && \
@@ -17,7 +17,8 @@ USER irisowner
 WORKDIR /opt/app
 
 COPY ./Installer.cls ./
-
+COPY ./src ./src/
+COPY ./iris.key /usr/irissys/mgr/
 
 RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
     /bin/echo -e "sys\nsys\n" \
@@ -28,6 +29,7 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Set p(\"AutheEnabled\")=\$zboolean(p(\"AutheEnabled\"),16,7)\n" \
             " Do ##class(Security.System).Modify(,.p)\n" \
             " Do \$system.OBJ.Load(\"/opt/app/Installer.cls\",\"ck\")\n" \
+            " Do \$system.OBJ.LoadDir(\"/datavol/PEX/cls/Demo/PEX\",\"ck\",,1)\n" \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
@@ -35,4 +37,5 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
     /bin/echo -e "sys\nsys\n" \
     | iris stop $ISC_PACKAGE_INSTANCENAME quietly
 
+WORKDIR /datavol
 CMD [ "-l", "/usr/irissys/mgr/messages.log" ]
