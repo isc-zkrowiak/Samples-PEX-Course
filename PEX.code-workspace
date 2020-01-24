@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "/Users/zkrowiak/Downloads/dev/java/lib/JDK18"
 		}
 	],
 	"settings": {
@@ -17,6 +14,12 @@
 			"password": "SYS",
 			"ns": "INTEROP",
 			"https": false
-		  }
+		},
+		"files.exclude": {
+			"**/.classpath": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.factorypath": true
+		}
 	}
 }

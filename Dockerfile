@@ -20,6 +20,7 @@ COPY ./Installer.cls ./
 COPY ./src ./src/
 COPY ./iris.key /usr/irissys/mgr/
 
+
 RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
     /bin/echo -e "sys\nsys\n" \
             " Do ##class(Security.Users).UnExpireUserPasswords(\"*\")\n" \
@@ -29,7 +30,7 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Set p(\"AutheEnabled\")=\$zboolean(p(\"AutheEnabled\"),16,7)\n" \
             " Do ##class(Security.System).Modify(,.p)\n" \
             " Do \$system.OBJ.Load(\"/opt/app/Installer.cls\",\"ck\")\n" \
-            " Do \$system.OBJ.LoadDir(\"/datavol/PEX/cls/Demo/PEX\",\"ck\",,1)\n" \
+            " Do \$system.OBJ.Load(\"/datavol/PEX/PEX/ExportItem-Demo_PEX_Production_Java_ZacksProcess.xml\",\"ck\",,1)\n" \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
