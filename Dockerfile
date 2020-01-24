@@ -19,6 +19,7 @@ WORKDIR /opt/app
 COPY ./Installer.cls ./
 COPY ./src ./src/
 COPY ./iris.key /usr/irissys/mgr/
+COPY ./Export-Demo_ZacksProd-20200124171807.xml  ./src
 
 
 RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
@@ -30,8 +31,9 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Set p(\"AutheEnabled\")=\$zboolean(p(\"AutheEnabled\"),16,7)\n" \
             " Do ##class(Security.System).Modify(,.p)\n" \
             " Do \$system.OBJ.Load(\"/opt/app/Installer.cls\",\"ck\")\n" \
-            " Do \$system.OBJ.Load(\"/datavol/PEX/PEX/ExportItem-Demo_PEX_Production_Java_ZacksProcess.xml\",\"ck\",,1)\n" \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
+            " zn \"INTEROP\""\
+            " Do \$system.OBJ.Load(\"/opt/app/src/Export-Demo_ZacksProd-20200124171807.xml\",\"ck\")\n" \
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
     | iris session $ISC_PACKAGE_INSTANCENAME && \
