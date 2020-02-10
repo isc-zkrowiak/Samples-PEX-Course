@@ -2,6 +2,9 @@ version: '3'
 services:
   iris:
     build: .
+    environment:
+      - CLASSPATH=/datavol/PEX/Java/src/lib/intersystems-gateway-3.1.0.jar:/datavol/PEX/Java/src/lib/intersystems-jdbc-3.1.0.jar:/datavol/PEX/Java/bin:/datavol/PEX/bin/jackson/jackson-annotations-2.9.6.jar:/datavol/PEX/bin/jackson/jackson-core-2.9.6.jar:/datavol/PEX/bin/jackson/jackson-databind-2.9.6.jar:/datavol/PEX/bin/gson-2.8.5.jar
+
     ports:
       - "52773:52773"
       - "51773:51773"

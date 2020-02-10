@@ -133,3 +133,58 @@ Starting IRIS
 
 
 19:30:30 2020-02-06 [INFO] ...started InterSystems IRIS instance IRIS
+18:25:22 2020-02-10 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:25:22 2020-02-10 [INFO] Starting InterSystems IRIS instance IRIS...
+18:25:28 2020-02-10 [INFO] 
+Now attempting WIJ compare, /usr/irissys/mgr/IRIS.WIJ
+This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:25:28 2020-02-10 [INFO] ...started InterSystems IRIS instance IRIS
+18:25:38 2020-02-10 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:25:38 2020-02-10 [INFO] Starting InterSystems IRIS instance IRIS...
+18:25:40 2020-02-10 [INFO] 
+Now attempting WIJ compare, /usr/irissys/mgr/IRIS.WIJ
+This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:25:40 2020-02-10 [INFO] ...started InterSystems IRIS instance IRIS
+20:13:37 2020-02-10 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+20:13:37 2020-02-10 [INFO] Starting InterSystems IRIS instance IRIS...
+20:13:40 2020-02-10 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+20:13:40 2020-02-10 [INFO] ...started InterSystems IRIS instance IRIS
+20:13:42 2020-02-10 [INFO] Shutting down InterSystems IRIS instance IRIS...
+20:13:49 2020-02-10 [INFO] Verifying InterSystems IRIS instance IRIS is down...
+20:13:49 2020-02-10 [INFO] IRIS^/usr/irissys^2020.1.0.194.0^down, last used Mon Feb 10 20:13:44 2020^iris.cpf^51773^52773^53773^^IRIS^^^/usr/irissys
+
+20:13:49 2020-02-10 [INFO] ...verified that InterSystems IRIS instance IRIS is down
+20:13:52 2020-02-10 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+20:13:52 2020-02-10 [INFO] Starting InterSystems IRIS instance IRIS...
+20:13:53 2020-02-10 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+Starting IRIS
+
+
+20:13:53 2020-02-10 [INFO] ...started InterSystems IRIS instance IRIS
