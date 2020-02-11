@@ -6,8 +6,12 @@ import java.io.FileWriter;
 import java.io.File;
 
 public class CustomOperation extends BusinessOperation {
-    String fileName = "Output.txt";
-    String outPath;
+
+
+    // make sure to declare runtime variables referenced in the production
+    // as public
+    public String fileName = "Output.txt";
+    public String outPath;
 
     public java.lang.Object OnMessage(java.lang.Object request) throws java.lang.Exception {
             CustomMessage message = (CustomMessage)request;
@@ -15,9 +19,9 @@ public class CustomOperation extends BusinessOperation {
             File file = new File(outPath + "Output.txt");
             int count = 1;
             while (file.exists()) {
-                String[] oldName = fileName.split(".");
+                String[] oldName = fileName.split("\\.");
                 String newName = oldName[0] + count + oldName[1];
-                file = new File(newName);
+                file = new File(outPath + newName);
             }
 
             FileWriter writer = new FileWriter(file);
