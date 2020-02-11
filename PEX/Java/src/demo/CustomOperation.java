@@ -27,8 +27,8 @@ public class CustomOperation extends BusinessOperation {
 
             FileWriter writer = new FileWriter(file);
 
-            writer.write("This customer's name is " + message.name + "\n");
-            writer.write("His or her phone number is " + message.number + "\n");
+            writer.write("This customer's name is " + message.name + System.lineSeparator());
+            writer.write("His or her phone number is " + message.number + System.lineSeparator());
             writer.write("He lives at " + message.address + "in the town or city of " + message.city);
             writer.close();
 
