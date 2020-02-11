@@ -1,4 +1,4 @@
-package demo;
+docpackage demo;
 
 import com.intersystems.enslib.pex.BusinessOperation;
 import demo.CustomMessage;
