@@ -46,8 +46,7 @@ On 1/14/20, 11:58 AM, "Joshua Goldman" <Joshua.Goldman@intersystems.com> wrote:
     classpaths:
     1
 
-
-    /datavol/PEX/Java/src/lib/intersystems-gateway-3.1.0.jar:/datavol/PEX/Java/src/lib/intersystems-jdbc-3.1.0.jar:/datavol/PEX/Java/bin:/datavol/PEX/bin/jackson/jackson-annotations-2.9.6.jar:/datavol/PEX/bin/jackson/jackson-core-2.9.6.jar:/datavol/PEX/bin/jackson/jackson-databind-2.9.6.jar:/datavol/PEX/bin/gson-2.8.5.jar
+/datavol/PEX/bin/intersystems-gateway-3.1.0.jar:/datavol/PEX/bin/intersystems-jdbc-3.1.0.jar:/datavol/PEX/bin/gson-2.8.5.jar:/datavol/PEX/Java/bin
 
     2
 

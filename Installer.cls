@@ -17,6 +17,9 @@ XData MyInstall [ XMLNamespace = INSTALLER ]
     </Configuration>
 
     <Import File="${SOURCESPATH}" Recurse="1"/>
+    <Production Name="Demo.AllJava" AutoStart="1"/>
+      
+    
   </Namespace>
 
 </Manifest>

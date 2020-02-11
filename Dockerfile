@@ -19,7 +19,7 @@ WORKDIR /opt/app
 COPY ./Installer.cls ./
 COPY ./src ./src/
 COPY ./iris.key /usr/irissys/mgr/
-COPY ./Export-Demo_ZacksProd-20200124171807.xml  ./src
+
 
 
 RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
@@ -33,7 +33,8 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Do \$system.OBJ.Load(\"/opt/app/Installer.cls\",\"ck\")\n" \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
             " zn \"INTEROP\""\
-            " Do \$system.OBJ.Load(\"/opt/app/src/Export-Demo_ZacksProd-20200124171807.xml\",\"ck\")\n" \
+            " Do \$system.OBJ.LoadDir(\"/opt/app/src/Demo/PEX/\",\"ck\")\n" \
+            " Do ##class(Demo.PEX.javaGateway).startGateway()"\
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
     | iris session $ISC_PACKAGE_INSTANCENAME && \
@@ -41,4 +42,4 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
     | iris stop $ISC_PACKAGE_INSTANCENAME quietly
 
 WORKDIR /datavol
-CMD [ "-l", "/usr/irissys/mgr/messages.log" ]
+
