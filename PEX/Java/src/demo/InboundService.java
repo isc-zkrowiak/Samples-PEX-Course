@@ -5,11 +5,12 @@ import java.util.Scanner; // Import the Scanner class to read text files
 import demo.CustomMessage;
 
 public class InboundService extends com.intersystems.enslib.pex.BusinessService {
-
+    public String tNames;
+    public String inPath;
     public java.lang.Object OnProcessInput(java.lang.Object messageInput) throws java.lang.Exception {
         
         
-          File folder = new File( "/datavol/data/in");
+          File folder = new File(inPath);
           File[] list = folder.listFiles();
 
           for (File file : list) {
@@ -21,7 +22,11 @@ public class InboundService extends com.intersystems.enslib.pex.BusinessService 
             req.city = reader.next();
             reader.close();
             if (file.delete()){
-              SendRequestAsync("EnsLib.PEX.BusinessProcess", req);
+              String[] targetNames =  tNames.split(",");
+              for (String name : targetNames){
+                SendRequestAsync(name, req);
+              }
+              
             };
             
           }
