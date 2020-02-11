@@ -1,7 +1,7 @@
 FROM docker.iscinternal.com/intersystems/iris:2020.1.0-latest
 
 USER root
-
+# https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
 
 RUN apt-get update && \
@@ -42,4 +42,4 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
     | iris stop $ISC_PACKAGE_INSTANCENAME quietly
 
 WORKDIR /datavol
-
+CMD [ "-l", "/usr/irissys/mgr/messages.log" ]

@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 194U)" ts="2020-02-11 17:12:16">
+<Export generator="IRIS" version="26" zv="IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 194U)" ts="2020-02-11 19:29:29">
 <Class name="Demo.AllJava">
 <Super>Ens.Production</Super>
-<TimeChanged>65420,59423.582811</TimeChanged>
+<TimeChanged>65420,70106.718536</TimeChanged>
 <TimeCreated>65419,73019.626915</TimeCreated>
+
+<Method name="OnStart">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+  set st =  ##class(%Net.Remote.Service).StartGateway("JavaGateway2")
+
+  return st
+]]></Implementation>
+</Method>
 
 <XData name="ProductionDefinition">
 <Data><![CDATA[
@@ -36,30 +46,30 @@ tNames=EnsLib.PEX.BusinessOperation</Setting>
 </Class>
 
 
-<Project name="EnsExportProduction_2020-02-11 17-11-23_479+0" LastModified="2020-02-11 17:12:16.021498">
-  <ProjectDescription>Studio Project generated from Production 'Demo.AllJava' at 2020-02-11 17:11:23.479 UTC</ProjectDescription>
+<Project name="EnsExportProduction_2020-02-11 19-29-03_315+0" LastModified="2020-02-11 19:29:29.604632">
+  <ProjectDescription>Studio Project generated from Production 'Demo.AllJava' at 2020-02-11 19:29:03.315 UTC</ProjectDescription>
   <Items>
     <ProjectItem name="Demo.AllJava" type="CLS"></ProjectItem>
     <ProjectItem name="ProductionSettings:Demo.AllJava.PTD" type="PTD"></ProjectItem>
-    <ProjectItem name="EnsExportNotes.EnsExportProduction_2020-02-11 17-11-23_479+0.PTD" type="PTD"></ProjectItem>
+    <ProjectItem name="EnsExportNotes.EnsExportProduction_2020-02-11 19-29-03_315+0.PTD" type="PTD"></ProjectItem>
   </Items>
 </Project>
 
 
-<Document name="EnsExportNotes.EnsExportProduction_2020-02-11 17-11-23_479+0.PTD"><ProjectTextDocument name="EnsExportNotes.EnsExportProduction_2020-02-11 17-11-23_479+0" description="Export Notes for export EnsExportProduction_2020-02-11 17-11-23_479+0">
+<Document name="EnsExportNotes.EnsExportProduction_2020-02-11 19-29-03_315+0.PTD"><ProjectTextDocument name="EnsExportNotes.EnsExportProduction_2020-02-11 19-29-03_315+0" description="Export Notes for export EnsExportProduction_2020-02-11 19-29-03_315+0">
 <![CDATA[<Deployment>
 <Creation>
-<Machine>8B5E06F00417</Machine>
+<Machine>0DFA0A7AF60C</Machine>
 <Instance>IRIS</Instance>
 <Namespace>INTEROP</Namespace>
 <SourceProduction>Demo.AllJava</SourceProduction>
 <Username>SuperUser</Username>
-<UTC>2020-02-11 17:12:16.015</UTC>
+<UTC>2020-02-11 19:29:29.603</UTC>
 </Creation>
 <Notes>
 </Notes>
 <Contents>
-<ExportProject>EnsExportProduction_2020-02-11 17-11-23_479+0</ExportProject>
+<ExportProject>EnsExportProduction_2020-02-11 19-29-03_315+0</ExportProject>
 <Item num="1">Demo.AllJava.CLS</Item>
 <Item num="2">ProductionSettings:Demo.AllJava.PTD</Item>
 </Contents>

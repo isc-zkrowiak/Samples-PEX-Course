@@ -252,3 +252,177 @@ Starting IRIS
 
 
 18:02:26 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:16:56 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+18:17:07 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:17:07 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:17:12 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:17:12 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:17:12 2020-02-11 [INFO] Executing command iris session "do ##class(Demo.PEX.javaGateway).startGateway()"...
+18:17:12 2020-02-11 [ERROR] irissession: invalid instance name 'DO ##CLASS(DEMO.PEX.JAVAGATEWAY).STARTGATEWAY()'
+
+18:17:12 2020-02-11 [ERROR] Command "iris session "do ##class(Demo.PEX.javaGateway).startGateway()"" exited with status 256
+18:17:12 2020-02-11 [FATAL] Error executing post-startup command
+18:17:35 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:17:35 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:17:38 2020-02-11 [INFO] 
+Now attempting WIJ compare, /usr/irissys/mgr/IRIS.WIJ
+This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:17:38 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:17:38 2020-02-11 [INFO] Executing command iris session "do ##class(Demo.PEX.javaGateway).startGateway()"...
+18:17:38 2020-02-11 [ERROR] irissession: invalid instance name 'DO ##CLASS(DEMO.PEX.JAVAGATEWAY).STARTGATEWAY()'
+
+18:17:38 2020-02-11 [ERROR] Command "iris session "do ##class(Demo.PEX.javaGateway).startGateway()"" exited with status 256
+18:17:38 2020-02-11 [FATAL] Error executing post-startup command
+18:17:46 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:17:46 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:17:49 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:17:49 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:17:53 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+18:17:56 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:17:56 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:17:58 2020-02-11 [INFO] 
+Now attempting WIJ compare, /usr/irissys/mgr/IRIS.WIJ
+This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:17:58 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:29:24 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+18:29:32 2020-02-11 [INFO] Verifying InterSystems IRIS instance IRIS is down...
+18:29:32 2020-02-11 [INFO] IRIS^/usr/irissys^2020.1.0.194.0^down, last used Tue Feb 11 18:29:29 2020^iris.cpf^51773^52773^53773^^IRIS^^^/usr/irissys
+
+18:29:32 2020-02-11 [INFO] ...verified that InterSystems IRIS instance IRIS is down
+18:31:05 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:31:05 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:31:09 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:31:09 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:31:09 2020-02-11 [INFO] Executing command iris session iris "##class(%Net.Remote.Service).StartGateway("JavaGateway2")"...
+18:31:09 2020-02-11 [INFO] 
+<INVALID ARGUMENT>
+
+18:31:09 2020-02-11 [INFO] ...executed command iris session iris "##class(%Net.Remote.Service).StartGateway("JavaGateway2")"
+18:36:18 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+18:36:26 2020-02-11 [INFO] Verifying InterSystems IRIS instance IRIS is down...
+18:36:26 2020-02-11 [INFO] IRIS^/usr/irissys^2020.1.0.194.0^down, last used Tue Feb 11 18:36:23 2020^iris.cpf^51773^52773^53773^^IRIS^^^/usr/irissys
+
+18:36:26 2020-02-11 [INFO] ...verified that InterSystems IRIS instance IRIS is down
+18:36:27 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:36:27 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:36:31 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:36:31 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:36:31 2020-02-11 [INFO] Executing command iris session iris "##class(%Net.Remote.Service).StartGateway("JavaGateway2")"...
+18:36:31 2020-02-11 [INFO] 
+<INVALID ARGUMENT>
+
+18:36:31 2020-02-11 [INFO] ...executed command iris session iris "##class(%Net.Remote.Service).StartGateway("JavaGateway2")"
+18:38:24 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+18:38:58 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:38:58 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:39:01 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:39:01 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:41:20 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+18:41:30 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:41:30 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+18:41:35 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:41:35 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+18:41:35 2020-02-11 [INFO] Executing command iris session iris "##class(%Net.Remote.Service).StartGateway("JavaGateway2")"...
+18:41:35 2020-02-11 [INFO] 
+<INVALID ARGUMENT>
+
+18:41:35 2020-02-11 [INFO] ...executed command iris session iris "##class(%Net.Remote.Service).StartGateway("JavaGateway2")"
+19:27:32 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+19:27:40 2020-02-11 [INFO] Verifying InterSystems IRIS instance IRIS is down...
+19:27:40 2020-02-11 [INFO] IRIS^/usr/irissys^2020.1.0.194.0^down, last used Tue Feb 11 19:27:37 2020^iris.cpf^51773^52773^53773^^IRIS^^^/usr/irissys
+
+19:27:40 2020-02-11 [INFO] ...verified that InterSystems IRIS instance IRIS is down
+19:27:44 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+19:27:44 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+19:27:48 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+19:27:48 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+19:29:34 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...
+19:29:42 2020-02-11 [INFO] Verifying InterSystems IRIS instance IRIS is down...
+19:29:42 2020-02-11 [INFO] IRIS^/usr/irissys^2020.1.0.194.0^down, last used Tue Feb 11 19:29:39 2020^iris.cpf^51773^52773^53773^^IRIS^^^/usr/irissys
+
+19:29:42 2020-02-11 [INFO] ...verified that InterSystems IRIS instance IRIS is down
+19:30:09 2020-02-11 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+19:30:09 2020-02-11 [INFO] Starting InterSystems IRIS instance IRIS...
+19:30:15 2020-02-11 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+19:30:15 2020-02-11 [INFO] ...started InterSystems IRIS instance IRIS
+19:34:13 2020-02-11 [INFO] Shutting down InterSystems IRIS instance IRIS...

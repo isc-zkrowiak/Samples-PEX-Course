@@ -23,7 +23,7 @@ ClassMethod startGateway() As %Status
         if (st '=1) {
             return st
         }
-        set st = ##class(%Net.Remote.Service).StartGateway(..#NAME,1)
+        #; set st = ##class(%Net.Remote.Service).StartGateway(..#NAME,1)
     Return st
 }
 
