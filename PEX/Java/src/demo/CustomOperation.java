@@ -20,7 +20,8 @@ public class CustomOperation extends BusinessOperation {
             int count = 1;
             while (file.exists()) {
                 String[] oldName = fileName.split("\\.");
-                String newName = oldName[0] + count + oldName[1];
+                String newName = oldName[0] + count + "." + oldName[1];
+                count++;
                 file = new File(outPath + newName);
             }
 
