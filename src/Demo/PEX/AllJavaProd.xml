@@ -24,7 +24,7 @@
     <Setting Target="Host" Name="%gatewayPort">44444</Setting>
     <Setting Target="Host" Name="%remoteClassname">demo.InboundService</Setting>
     <Setting Target="Host" Name="%gatewayExtraClasspaths"></Setting>
-    <Setting Target="Adapter" Name="CallInterval">1</Setting>
+    <Setting Target="Adapter" Name="CallInterval">5</Setting>
     <Setting Target="Host" Name="%gatewayHost">0.0.0.0</Setting>
     <Setting Target="Host" Name="%remoteSettings">inPath=/datavol/data/in
 tNames=EnsLib.PEX.BusinessOperation</Setting>
