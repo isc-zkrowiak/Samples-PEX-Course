@@ -24,7 +24,7 @@ public class InboundService extends com.intersystems.enslib.pex.BusinessService 
             if (file.delete()){
               String[] targetNames =  tNames.split(",");
               for (String name : targetNames){
-                SendRequestAsync(name, req);
+                SendRequestAsync(name, req, "a descriptor");
               }
               
             };
