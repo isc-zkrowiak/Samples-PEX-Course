@@ -1,4 +1,4 @@
-FROM docker.iscinternal.com/intersystems/iris:2020.1.0-latest
+FROM store/intersystems/iris-community:2020.1.0.215.0
 
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
@@ -33,7 +33,7 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Do \$system.OBJ.Load(\"/opt/app/Installer.cls\",\"ck\")\n" \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
             " zn \"INTEROP\""\
-            " Do \$system.OBJ.LoadDir(\"/opt/app/src/Demo/PEX/\",\"ck\")\n" \
+            " Do \$system.OBJ.LoadDir(\"/opt/app/src/\",\"ck\",,1)\n" \
             " Do ##class(Demo.PEX.javaGateway).startGateway()"\
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
