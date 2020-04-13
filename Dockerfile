@@ -18,7 +18,7 @@ WORKDIR /opt/app
 
 COPY ./Installer.cls ./
 COPY ./src ./src/
-COPY ./iris.key /usr/irissys/mgr/
+
 
 
 

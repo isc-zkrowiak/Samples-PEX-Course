@@ -15,7 +15,8 @@ ClassMethod startGateway() As %Status
         set gw.ClassPath ="/datavol/PEX/bin/intersystems-gateway-3.1.0.jar:" _
             "/datavol/PEX/bin/intersystems-jdbc-3.1.0.jar:"
             _"/datavol/PEX/bin/gson-2.8.5.jar:"
-            _"/datavol/PEX/Java/bin"
+            _"/datavol/PEX/Java/bin:"
+            _ "/datavol/PEX/Java/binpdfbox-app-2.0.19.jar"
         set gw.Type = "1" //represents java gateway type
         set gw.Name = ..#NAME
         #; set gw.LogFile = "/JavaLog.txt" 

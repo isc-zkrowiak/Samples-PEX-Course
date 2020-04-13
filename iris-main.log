@@ -431,3 +431,25 @@ Starting IRIS
 21:38:38 2020-02-11 [INFO] IRIS^/usr/irissys^2020.1.0.197.0com^down, last used Tue Feb 11 21:38:35 2020^iris.cpf^51773^52773^53773^^IRIS^^^/usr/irissys
 
 21:38:38 2020-02-11 [INFO] ...verified that InterSystems IRIS instance IRIS is down
+19:10:26 2020-02-18 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+19:10:26 2020-02-18 [INFO] Starting InterSystems IRIS instance IRIS...
+19:10:29 2020-02-18 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+ISC Development Container
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+Starting IRIS
+
+
+19:10:29 2020-02-18 [INFO] ...started InterSystems IRIS instance IRIS
+18:19:52 2020-04-13 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+18:19:52 2020-04-13 [INFO] Starting InterSystems IRIS instance IRIS...
+18:19:54 2020-04-13 [INFO] This copy of InterSystems IRIS has been licensed for use exclusively by:
+Local license key file not found.
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+2 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+18:19:54 2020-04-13 [INFO] ...started InterSystems IRIS instance IRIS
