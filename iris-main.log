@@ -513,3 +513,17 @@ Starting IRIS
 
 
 21:00:12 2020-04-13 [INFO] ...started InterSystems IRIS instance IRIS
+14:00:03 2020-04-14 [WARNING] No init process detected!  This container may accumulate zombie processes if run for a long time.  Consider using "docker create --init ..." or equivalent.
+14:00:03 2020-04-14 [INFO] Starting InterSystems IRIS instance IRIS...
+14:00:07 2020-04-14 [INFO] 
+Now attempting WIJ compare, /usr/irissys/mgr/IRIS.WIJ
+This copy of InterSystems IRIS has been licensed for use exclusively by:
+InterSystems IRIS Community
+Copyright (c) 1986-2020 by InterSystems Corporation
+Any other use is a violation of your license agreement
+
+1 alert(s) during startup. See messages.log for details.
+Starting IRIS
+
+
+14:00:07 2020-04-14 [INFO] ...started InterSystems IRIS instance IRIS
