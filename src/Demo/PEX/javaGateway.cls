@@ -34,4 +34,25 @@ ClassMethod Restart() As %Status
     return st
 }
 
+ClassMethod startDotNet() As %Status
+{
+       
+        #dim gw As %Net.Remote.ObjectGateway 
+
+        set gw = ##class(%Net.Remote.ObjectGateway).%New()
+        set gw.Port = "44446"
+        set gw.DotNetVersion = "Core2.1"
+        set gw.Server = "0.0.0.0"
+        set gw.Exec64 = 1
+        set gw.Type = "2" //represents dotnet gateway type
+        set gw.Name = "DotNetGateway2"
+        #; set gw.LogFile = "/JavaLog.txt" 
+        set st = gw.%Save()
+        if (st '=1) {
+            return st
+        }
+        set st = ##class(%Net.Remote.Service).StartGateway("DotNetGateway2",1)
+    Return st
+}
+
 }

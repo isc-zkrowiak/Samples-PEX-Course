@@ -1,14 +1,19 @@
-FROM store/intersystems/iris-community:2020.1.0.215.0
-
+FROM docker.iscinternal.com/intersystems/iris:2020.2.0SQL1.510.0
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
 
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk && \
-    apt-get install -y ant && \
-    apt-get install -y maven && \
-    apt-get clean;
+    wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
+    dpkg -i packages-microsoft-prod.deb && \
+    apt-get install -y apt-transport-https && \
+    apt-get update && \
+    apt-get install -y dotnet-sdk-2.1 && \
+    apt-get install -y dotnet-runtime-2.1 && \
+    apt-get install -y curl && \
+    apt-get clean && \
+    curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe;
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 
@@ -18,6 +23,7 @@ WORKDIR /opt/app
 
 COPY ./Installer.cls ./
 COPY ./src ./src/
+COPY ./iris.key /usr/irissys/mgr/
 
 
 

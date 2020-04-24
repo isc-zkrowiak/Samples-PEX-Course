@@ -2,23 +2,19 @@
 	"folders": [
 		{
 			"path": "."
-		}
+		},
+		
 	],
 	"settings": {
 		"objectscript.conn": {
 			"active": true,
 			"ns": "INTEROP",
+			"https": false,
 			"docker-compose":{
 				"service": "iris",
 				"internalPort": 52773
 			}
 		},
-		"files.exclude": {
-			"**/.classpath": true,
-			"**/.project": true,
-			"**/.settings": true,
-			"**/.factorypath": true
-		},
-		"java.configuration.updateBuildConfiguration": "interactive"
+		
 	}
 }

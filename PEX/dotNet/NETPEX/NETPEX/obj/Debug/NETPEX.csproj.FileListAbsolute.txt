@@ -1,5 +1,0 @@
-/Users/zkrowiak/code/PEX/PEX/dotNet/NETPEX/NETPEX/obj/Debug/NETPEX.csprojAssemblyReference.cache
-/Users/zkrowiak/code/PEX/PEX/dotNet/NETPEX/NETPEX/bin/Debug/NETPEX.exe
-/Users/zkrowiak/code/PEX/PEX/dotNet/NETPEX/NETPEX/bin/Debug/NETPEX.pdb
-/Users/zkrowiak/code/PEX/PEX/dotNet/NETPEX/NETPEX/obj/Debug/NETPEX.exe
-/Users/zkrowiak/code/PEX/PEX/dotNet/NETPEX/NETPEX/obj/Debug/NETPEX.pdb
