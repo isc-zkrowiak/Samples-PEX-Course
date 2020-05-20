@@ -1,7 +1,7 @@
 package finance;
 
 
-public class Quote extends com.intersystems.enslib.pex.Message {
+public class RecordRequest extends com.intersystems.enslib.pex.Message {
     
     String date;
     String symbol;

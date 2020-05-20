@@ -9,7 +9,7 @@
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-  set st =  ##class(%Net.Remote.Service).StartGateway("JavaGateway2")
+  set st =  ##class(%Net.Remote.Service).StartGateway("JavaGateway")
 
   return st
 ]]></Implementation>

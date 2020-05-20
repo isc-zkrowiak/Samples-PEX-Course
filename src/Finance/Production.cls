@@ -3,7 +3,7 @@ Class Finance.Production Extends Ens.Production
 
 ClassMethod OnStart() As %Status
 {
-  set st =  ##class(%Net.Remote.Service).StartGateway("JavaGateway2",1)
+  set st =  ##class(%Net.Remote.Service).StartGateway("JavaGateway",1)
 
 
   return st
@@ -12,7 +12,7 @@ ClassMethod OnStart() As %Status
 ClassMethod OnStop()
 {
 
-  set st = ##class(%Net.Remote.Service).StopGateway("JavaGateway2",1)
+  set st = ##class(%Net.Remote.Service).StopGateway("JavaGateway",1)
 }
 
 XData ProductionDefinition

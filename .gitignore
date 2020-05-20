@@ -5,3 +5,15 @@ data/Out
 PEX/Java/bin/demo
 PEX.code-workspace
 iris.key
+.DS_Store
+iris-main.log
+PEX/bin
+
+PEX/DotNet/bin
+PEX/DotNet/obj
+PEX/DotNet/.vs
+PEX/DotNet/Properties
+
+PEX/testNet/bin
+PEX/testNet/obj
+PEX/testNet/.vs
