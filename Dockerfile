@@ -40,7 +40,7 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
             " zn \"INTEROP\""\
             " Do \$system.OBJ.LoadDir(\"/opt/app/src/\",\"ck\",,1)\n" \
-            " Do ##class(Demo.PEX.javaGateway).startGateway()"\
+            " Do ##class(Demo.PEX.gateWayMaker).startGateway()"\
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
     | iris session $ISC_PACKAGE_INSTANCENAME && \
