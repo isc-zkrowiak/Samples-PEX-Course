@@ -1,29 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj": {}
+    "/datavol/DotNet/DotNet.csproj": {}
   },
   "projects": {
-    "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj": {
+    "/datavol/DotNet/DotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj",
+        "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
         "projectName": "DotNet",
-        "projectPath": "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj",
-        "packagesPath": "/Users/zkrowiak/.nuget/packages/",
-        "outputPath": "/Users/zkrowiak/code/PEX/DotNet/obj/",
+        "projectPath": "/datavol/DotNet/DotNet.csproj",
+        "packagesPath": "/home/irisowner/.nuget/packages/",
+        "outputPath": "/datavol/DotNet/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/zkrowiak/.nuget/NuGet/NuGet.Config"
+          "/datavol/DotNet/nuget.config",
+          "/home/irisowner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "netcoreapp2.1"
         ],
         "sources": {
+          "/usr/irissys/dev/dotnet/bin/Core21/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "netcoreapp2.1": {
             "projectReferences": {}
           }
         },
@@ -34,23 +39,23 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "IRISGatewayCore21": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.NETCore.App": {
-              "privateAssets": "all"
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
         }
       }
     }
