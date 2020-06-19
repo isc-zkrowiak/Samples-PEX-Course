@@ -16,6 +16,14 @@
 				"internalPort": 52773
 			}
 		},
+		"objectscript.conn.active": true,
+		"objectscript.conn.password": "",
+		"objectscript.suppressCompileMessages": false,
+		"objectscript.conn.username": "SuperUser",
+		"jake.autoDetect": "off",
+	
 		
-	}
+	},
+	"java.configuration.maven.userSettings": "",
+	"java.contentProvider.preferred": ""
 }
