@@ -1,5 +1,5 @@
 /// 
-Class Finance.BusinessBPL Extends Ens.BusinessProcessBPL
+Class Finance.Java.BusinessBPL Extends Ens.BusinessProcessBPL
 {
 
 /// BPL Definition

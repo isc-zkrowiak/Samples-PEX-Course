@@ -1,29 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/datavol/DotNet/DotNet.csproj": {}
+    "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj": {}
   },
   "projects": {
-    "/datavol/DotNet/DotNet.csproj": {
+    "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
+        "projectUniqueName": "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj",
         "projectName": "DotNet",
-        "projectPath": "/datavol/DotNet/DotNet.csproj",
-        "packagesPath": "/home/irisowner/.nuget/packages/",
-        "outputPath": "/datavol/DotNet/obj/",
+        "projectPath": "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj",
+        "packagesPath": "/Users/zkrowiak/.nuget/packages/",
+        "outputPath": "/Users/zkrowiak/code/PEX/DotNet/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/datavol/DotNet/nuget.config",
-          "/home/irisowner/.nuget/NuGet/NuGet.Config"
+          "/Users/zkrowiak/code/PEX/DotNet/NuGet.Config",
+          "/Users/zkrowiak/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
+          "/Users/zkrowiak/code/PEX/PEX/DotNet": {},
           "/usr/irissys/dev/dotnet/bin/Core21/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -46,16 +44,23 @@
               "version": "[1.0.0, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
         }
       }
     }

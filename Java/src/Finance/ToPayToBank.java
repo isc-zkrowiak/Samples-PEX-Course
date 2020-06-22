@@ -32,7 +32,7 @@ public class ToPayToBank extends com.intersystems.enslib.pex.BusinessOperation{
             File OutputMessage = new File (OutputPath);
             FileWriter writer = new FileWriter(OutputMessage);
 
-            String TransactionID = RandomStringUtils.random(20, true, true);
+            String TransactionID = RandomStringUtils.random(20, true,);
 
             writer.write ("credit request:" + System.lineSeparator());
             writer.write ("Transaction Code:" + TransactionID + System.lineSeparator());
@@ -42,7 +42,7 @@ public class ToPayToBank extends com.intersystems.enslib.pex.BusinessOperation{
             writer.write("ToAccount: " + request.PayTo.AccountNumber + System.lineSeparator());
             writer.write("Amount: " + request.TransactionAmount);
             writer.close();
-            return null;
+            return true;
 
             
         }
