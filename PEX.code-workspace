@@ -21,6 +21,8 @@
 		"objectscript.suppressCompileMessages": false,
 		"objectscript.conn.username": "SuperUser",
 		"jake.autoDetect": "off",
+		"java.dependency.syncWithFolderExplorer": true,
+		"java.dependency.packagePresentation": "hierarchical",
 	
 		
 	},

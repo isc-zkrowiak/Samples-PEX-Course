@@ -20,12 +20,19 @@ XData ProductionDefinition
 <Production Name="Finance.Production" LogGeneralTraceEvents="false">
   <Description></Description>
   <ActorPoolSize>2</ActorPoolSize>
-  <Item Name="FromPdfFile" Category="" ClassName="EnsLib.PEX.BusinessService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
-    <Setting Target="Host" Name="%remoteClassname">finance.PexService</Setting>
-    <Setting Target="Host" Name="%remoteSettings">targetConfigNames=Finance.BusinessBPL
-filePath=/datavol/data/in/2017Sample.pdf</Setting>
+  <Item Name="ToPayFromOperation" Category="" ClassName="EnsLib.PEX.BusinessOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="%remoteClassname">Finance.ToPayFromBank</Setting>
   </Item>
-  <Item Name="Finance.BusinessBPL" Category="" ClassName="Finance.BusinessBPL" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+  <Item Name="ToPayToOperation" Category="" ClassName="EnsLib.PEX.BusinessOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="%remoteClassname">Finance.ToPayToBank</Setting>
+  </Item>
+  <Item Name="ProcessPaymentRequest" Category="" ClassName="EnsLib.PEX.BusinessProcess" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="%remoteClassname">Finance.ProcessPaymentRequest</Setting>
+  </Item>
+  <Item Name="FromFileService" Category="" ClassName="EnsLib.PEX.BusinessService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+    <Setting Target="Host" Name="%remoteClassname">Finance.FromFileTransaction</Setting>
+    <Setting Target="Host" Name="%remoteSettings">TargetComponentNames=ProcessPaymentRequest
+InboundFilePath=/datavol/data/in</Setting>
   </Item>
 </Production>
 }
