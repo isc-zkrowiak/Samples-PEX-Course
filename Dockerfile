@@ -16,7 +16,7 @@ RUN apt-get update && \
     curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe;
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-
+ENV CLASSPATH=/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*
 USER irisowner
 
 WORKDIR /opt/app
@@ -40,7 +40,7 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
             " Set sc = ##class(App.Installer).setup(, 3)\n" \
             " zn \"INTEROP\""\
             " Do \$system.OBJ.LoadDir(\"/opt/app/src/\",\"ck\",,1)\n" \
-            " Do ##class(Setup.gateWayMaker).startGateway()"\
+            " Do ##class(Setup.GatewayMaker).StartGateway()"\
             " If 'sc do \$zu(4, \$JOB, 1)\n" \
             " halt" \
     | iris session $ISC_PACKAGE_INSTANCENAME && \
