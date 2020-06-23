@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Finance{
 
@@ -22,13 +23,13 @@ namespace Finance{
 
                 String today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
                 string OutputPath = FilePath + today;
-                List<string[]> writer = new List<string[]>();
+                List<string> writer = new List<string>();
 
 
-                writer.append ("Debit request:" + Environment.NewLine);
-                writer.append("Route:" + request.PayFrom.RoutingNumber + Environment.NewLine);
-                writer.append("Account: " + request.PayFrom.AccountNumber + Environment.NewLine);
-                writer.append("Amount: " + request.TransactionAmount);
+                writer.Add ("Debit request:" + Environment.NewLine);
+                writer.Add("Route:" + request.PayFrom.RoutingNumber + Environment.NewLine);
+                writer.Add("Account: " + request.PayFrom.AccountNumber + Environment.NewLine);
+                writer.Add("Amount: " + request.TransactionAmount);
                 
                 File.WriteAllLines(OutputPath, writer);
 

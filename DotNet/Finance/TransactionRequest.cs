@@ -7,7 +7,7 @@ namespace Finance{
 
 
 
-        public double TransactionAmount;
+        public decimal TransactionAmount;
         public PaymentProfile PayFrom;
         public PaymentProfile PayTo;
         public string FromCurrency;

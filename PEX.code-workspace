@@ -23,6 +23,7 @@
 		"jake.autoDetect": "off",
 		"java.dependency.syncWithFolderExplorer": true,
 		"java.dependency.packagePresentation": "hierarchical",
+		"editor.wordWrapColumn": 3000,
 	
 		
 	},

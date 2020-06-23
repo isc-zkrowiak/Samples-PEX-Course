@@ -8,8 +8,17 @@ Parameter DOTNETNAME = "DotNetGateway";
 ClassMethod StartGateway() As %Status
 {
        
-        do ..StartJavaGateway()
-        do ..StartDotNetGateway()
+        set st = ##class(%Net.Remote.Service).StartGateway(..#JAVANAME,1)
+
+        if ($System.Status.IsError(st)) {return st}
+        set st = ##class(%Net.Remote.Service).StartGateway(..#DOTNETNAME,1)
+        return st
+}
+
+ClassMethod StopGateway() As %Status
+{
+    do ##class(%Net.Remote.Service).StopGateway(..#JAVANAME)
+    do ##class(%Net.Remote.Service).StopGateway(..#DOTNETNAME)
 }
 
 ClassMethod StartJavaGateway() As %Status
