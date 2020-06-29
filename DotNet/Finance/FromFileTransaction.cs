@@ -23,6 +23,9 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
         // Enumerate over files in the directory.
         foreach (string file in folder) {
 
+            // Ignore .keep file
+            if (file == "/datavol/data/in/.keep") {continue;}
+
             // Enumerate through lines of file
             IEnumerable<string> FileLines = File.ReadLines(file);
             IEnumerator<string> reader = FileLines.GetEnumerator();
@@ -43,7 +46,6 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
             
             // Break apart nested PaymentProfile objects and populate fields.
             string[] PaymentProfile = tempStringArray[1].Split("|");
-            LOGINFO(PaymentProfile[0]);
             request.PayFrom.AccountNumber  = int.Parse(PaymentProfile[0]);
             request.PayFrom.RoutingNumber = int.Parse(PaymentProfile[1]);
             request.PayFrom.UserName = PaymentProfile[2];

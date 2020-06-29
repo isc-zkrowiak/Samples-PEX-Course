@@ -22,10 +22,11 @@ namespace Finance{
             TransactionRequest request = (TransactionRequest)input;
 
             // Allow users to enter file path with or without trailing path separator.
-            if (FilePath[(FilePath.length -1 )] != Path.PathSeparator) {
+            if (FilePath[(FilePath.Length -1 )] != Path.DirectorySeparatorChar) {
 
-                FilePath = FilePath + Path.PathSeparator;
+                FilePath = FilePath + Path.DirectorySeparatorChar;
             }
+            
 
             // Generate file name from current DateTime.
             string today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZ");

@@ -25,6 +25,8 @@ public class FromFileTransaction extends com.intersystems.enslib.pex.BusinessSer
       // Enumerate over files in the directory.
       for (File file : list) {
 
+          
+          if (file.getName().equals(".keep")) {continue;}  
           // create scanner object to read file lines.
           Scanner reader = new Scanner(file);
 

@@ -21,7 +21,7 @@ ClassMethod StopGateway() As %Status
     do ##class(%Net.Remote.Service).StopGateway(..#DOTNETNAME)
 }
 
-ClassMethod StartJavaGateway() As %Status
+ClassMethod BuildJavaGateway() As %Status
 {
     #dim gw As %Net.Remote.ObjectGateway 
 
@@ -37,7 +37,7 @@ ClassMethod StartJavaGateway() As %Status
         if (st '=1) {
             return st
         }
-        set st = ##class(%Net.Remote.Service).StartGateway(..#JAVANAME,1)
+        
     Return st
 }
 
@@ -51,7 +51,7 @@ ClassMethod Restart() As %Status
     return st
 }
 
-ClassMethod StartDotNetGateway() As %Status
+ClassMethod BuildDotNetGateway() As %Status
 {
        
         #dim gw As %Net.Remote.ObjectGateway 
@@ -68,8 +68,17 @@ ClassMethod StartDotNetGateway() As %Status
         if (st '=1) {
             return st
         }
-        set st = ##class(%Net.Remote.Service).StartGateway(..#DOTNETNAME,1)
+       
     Return st
+}
+
+ClassMethod BuildGateways() As %Status
+{
+    set st = ..BuildDotNetGateway()
+    $$$ThrowOnError(st)
+    set st= ..BuildJavaGateway()
+    $$$ThrowOnError(st)
+    return st
 }
 
 }

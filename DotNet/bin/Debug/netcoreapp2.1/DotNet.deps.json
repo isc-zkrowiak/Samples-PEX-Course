@@ -1,15 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "540c8aeddf608309d9411d27642270b3869d06fa"
+    "signature": "5c22774f17144ae96e0a5b52786237655105b1c2"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "DotNet/1.0.0": {
         "dependencies": {
-          "IRISGatewayCore21": "1.0.0",
-          "RandomStringCreator": "2.0.0"
+          "IRISGatewayCore21": "1.0.0"
         },
         "runtime": {
           "DotNet.dll": {}
@@ -120,14 +119,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1.19813"
-          }
-        }
-      },
-      "RandomStringCreator/2.0.0": {
-        "runtime": {
-          "lib/netstandard2.0/RandomStringCreator.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -476,13 +467,6 @@
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
-    },
-    "RandomStringCreator/2.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GGpyCGm7W27MlBXp+HNeslnOsNi80Z2isoCt/yY7aKoyjS2Vl6AQ6kq2UK6NgeVpEQZeXaOIEf2pNbiXeARYdg==",
-      "path": "randomstringcreator/2.0.0",
-      "hashPath": "randomstringcreator.2.0.0.nupkg.sha512"
     },
     "runtime.native.System/4.0.0": {
       "type": "package",
