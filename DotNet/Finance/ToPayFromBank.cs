@@ -1,56 +1,54 @@
 using System;
-using System.IO;
-using System.Collections.Generic;
+using System.IO;  // Import the File class
+using System.Collections.Generic; // Import class to deal with enumerators.
 
 namespace Finance{
 
     public class ToPayFromBank : InterSystems.EnsLib.PEX.BusinessOperation {
 
-        public string FilePath = "/datavol/data/FromBankOut/";
+        // Filepath to output directory. Set at runtime.
+        public string FilePath;
 
-        public override void OnTearDown() {
-
-        }
-        public override void OnInit(){
-
-        }
+        public override void OnTearDown() {} // PEX abstract method. Must override.
+        public override void OnInit(){} // PEX abstract method. Must override.
 
 
         public override object OnMessage(object input) {
 
-            try {
-                TransactionRequest request = (TransactionRequest)input;
+            // Cast input object to expected class.
+            TransactionRequest request = (TransactionRequest)input;
 
-                String today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-                string OutputPath = FilePath + today;
-                List<string> writer = new List<string>();
+             // Allow users to enter file path with or without trailing path separator.
+            // if (FilePath[-1] != Path.PathSeparator) {
+
+            //     FilePath = FilePath + Path.PathSeparator;
+            // }
+
+            // Generate file name from current DateTime.
+            string today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
 
-                writer.Add ("Debit request:" + Environment.NewLine);
-                writer.Add("Route:" + request.PayFrom.RoutingNumber + Environment.NewLine);
-                writer.Add("Account: " + request.PayFrom.AccountNumber + Environment.NewLine);
-                writer.Add("Amount: " + request.TransactionAmount);
-                
-                File.WriteAllLines(OutputPath, writer);
 
-                return null;
-            }
-            catch (Exception e) {
-                
+            // Append to qualified file path.
+            string OutputPath = FilePath + today;
+           
+
+            // Create a string list to store file lines.
+            List<string> writer = new List<string>();
+            writer.Add ("Debit request:" + Environment.NewLine);
+            writer.Add("Route:" + request.PayFrom.RoutingNumber + Environment.NewLine);
+            writer.Add("Account: " + request.PayFrom.AccountNumber + Environment.NewLine);
+            writer.Add("Amount: " + request.TransactionAmount);
+            
+            // Write all lines to file.
+            File.WriteAllLines(OutputPath, writer);
+
             return null;
-            }
-       
-       
-
-    }
-
-   
-
-        
-    
+        }
+    }    
 }
 
-}
+
 
 
 

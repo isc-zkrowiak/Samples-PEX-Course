@@ -18,3 +18,10 @@ PEX/testNet/bin
 PEX/testNet/obj
 PEX/testNet/.vs
 og.cls
+DotNet/bin/Debug/netcoreapp2.1/*.pdb
+DotNet/bin/Debug/netcoreapp2.1/*.dll
+DotNet/bin/Debug/netcoreapp2.1/*.json
+DotNet/.vs
+Java/.classpath
+Java/.DS_Store
+Java/.project

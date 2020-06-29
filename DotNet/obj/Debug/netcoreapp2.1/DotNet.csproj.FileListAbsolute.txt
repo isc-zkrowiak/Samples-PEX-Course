@@ -7,5 +7,3 @@
 /datavol/DotNet/obj/Debug/netcoreapp2.1/DotNet.AssemblyInfo.cs
 /datavol/DotNet/obj/Debug/netcoreapp2.1/DotNet.dll
 /datavol/DotNet/obj/Debug/netcoreapp2.1/DotNet.pdb
-/datavol/DotNet/bin/Debug/netcoreapp2.1/DotNet.runtimeconfig.json
-/datavol/DotNet/bin/Debug/netcoreapp2.1/DotNet.runtimeconfig.dev.json

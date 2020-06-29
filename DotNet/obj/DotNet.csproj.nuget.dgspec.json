@@ -1,27 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj": {}
+    "/datavol/DotNet/DotNet.csproj": {}
   },
   "projects": {
-    "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj": {
+    "/datavol/DotNet/DotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj",
+        "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
         "projectName": "DotNet",
-        "projectPath": "/Users/zkrowiak/code/PEX/DotNet/DotNet.csproj",
-        "packagesPath": "/Users/zkrowiak/.nuget/packages/",
-        "outputPath": "/Users/zkrowiak/code/PEX/DotNet/obj/",
+        "projectPath": "/datavol/DotNet/DotNet.csproj",
+        "packagesPath": "/home/irisowner/.nuget/packages/",
+        "outputPath": "/datavol/DotNet/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/zkrowiak/code/PEX/DotNet/NuGet.Config",
-          "/Users/zkrowiak/.config/NuGet/NuGet.Config"
+          "/datavol/DotNet/nuget.config",
+          "/home/irisowner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "/Users/zkrowiak/code/PEX/PEX/DotNet": {},
           "/usr/irissys/dev/dotnet/bin/Core21/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -51,16 +53,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

@@ -1,5 +1,6 @@
 package Finance;
 
+// Property of TransactionRequest message.
 public class PaymentProfile {
 
     public int AccountNumber;
