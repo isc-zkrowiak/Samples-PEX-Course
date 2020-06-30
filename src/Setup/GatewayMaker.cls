@@ -27,7 +27,7 @@ ClassMethod BuildJavaGateway() As %Status
 
         set gw = ##class(%Net.Remote.ObjectGateway).%New()
         set gw.Port = "44444"
-        set gw.JavaHome = "/usr/lib/jvm/java-8-openjdk-amd64/jre"
+        set gw.JavaHome = ##class(%SYSTEM.Util).GetEnviron("JAVA_HOME")
         set gw.Server = "0.0.0.0"
         set gw.ClassPath ="/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*"
         set gw.Type = "1" //represents java gateway type
