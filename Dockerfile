@@ -16,35 +16,30 @@ RUN apt-get update && \
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ENV CLASSPATH=/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*
-USER irisowner
 
 WORKDIR /opt/app
+COPY irissession.sh /
+RUN chmod +x /irissession.sh 
+
+USER irisowner
+
 
 COPY ./Installer.cls ./
 COPY ./src ./src/
 COPY ./iris.key /usr/irissys/mgr/
+SHELL ["/irissession.sh"]
 
 
 
+RUN \
+    Do $system.OBJ.Load("/opt/app/Installer.cls","ck") \
+    Set sc = ##class(App.Installer).setup(, 3) \
+    zn "INTEROP" \
+    Do $system.OBJ.LoadDir("/opt/app/src/","ck",,1) \
+    Do ##class(Setup.GatewayMaker).BuildGateways() 
 
-RUN iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyId=sys,sys && \
-    /bin/echo -e "sys\nsys\n" \
-            " Do ##class(Security.Users).UnExpireUserPasswords(\"*\")\n" \
-            " Do ##class(Security.Users).AddRoles(\"admin\", \"%ALL\")\n" \
-            " Do ##class(Security.System).Get(,.p)\n" \
-            " // 2**4 = 16; this sets bit 4 to enable OS authentication for the admin user" \
-            " Set p(\"AutheEnabled\")=\$zboolean(p(\"AutheEnabled\"),16,7)\n" \
-            " Do ##class(Security.System).Modify(,.p)\n" \
-            " Do \$system.OBJ.Load(\"/opt/app/Installer.cls\",\"ck\")\n" \
-            " Set sc = ##class(App.Installer).setup(, 3)\n" \
-            " zn \"INTEROP\""\
-            " Do \$system.OBJ.LoadDir(\"/opt/app/src/\",\"ck\",,1)\n" \
-            " Do ##class(Setup.GatewayMaker).BuildGateways()"\
-            " If 'sc do \$zu(4, \$JOB, 1)\n" \
-            " halt" \
-    | iris session $ISC_PACKAGE_INSTANCENAME && \
-    /bin/echo -e "sys\nsys\n" \
-    | iris stop $ISC_PACKAGE_INSTANCENAME quietly
+# bringing the standard shell back
+SHELL ["/bin/bash", "-c"]
 
 WORKDIR /datavol
 CMD [ "-l", "/usr/irissys/mgr/messages.log" ]
