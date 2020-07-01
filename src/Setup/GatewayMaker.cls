@@ -29,7 +29,7 @@ ClassMethod BuildJavaGateway() As %Status
         set gw.Port = "44444"
         set gw.JavaHome = ##class(%SYSTEM.Util).GetEnviron("JAVA_HOME")
         set gw.Server = "0.0.0.0"
-        set gw.ClassPath ="/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*"
+        set gw.ClassPath =  ##class(%SYSTEM.Util).GetEnviron("CLASSPATH")
         set gw.Type = "1" //represents java gateway type
         set gw.Name = ..#JAVANAME
         #; set gw.LogFile = "/JavaLog.txt" 
@@ -58,7 +58,7 @@ ClassMethod BuildDotNetGateway() As %Status
 
         set gw = ##class(%Net.Remote.ObjectGateway).%New()
         set gw.Port = "55555"
-        set gw.DotNetVersion = "Core2.1"
+        set gw.DotNetVersion = "Core2.0"
         set gw.Server = "0.0.0.0"
         set gw.Exec64 = 1
         set gw.Type = "2" //represents dotnet gateway type

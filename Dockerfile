@@ -1,4 +1,4 @@
-FROM docker.iscinternal.com/intersystems/iris:2020.2.0SQL1.510.0
+FROM store/intersystems/iris-community:2020.2.0.211.0
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
@@ -13,9 +13,20 @@ RUN apt-get update && \
     apt-get install -y dotnet-runtime-2.1 && \ 
     apt-get clean 
 
+ARG SHARED_DIRECTORY=/home/project/shared/Samples-PEX-Course
 
+RUN printenv
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-ENV CLASSPATH=/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*
+
+WORKDIR ${SHARED_DIRECTORY}/Java/lib/
+RUN cp -r /usr/irissys/dev/java/lib/jackson/* ./
+RUN cp -r /usr/irissys/dev/java/lib/JDK18/* ./
+RUN cp -r /usr/irissys/dev/java/lib/gson/* ./
+ 
+ENV CLASSPATH=${SHARED_DIRECTORY}/Java/lib/*:${SHARED_DIRECTORY}/Java/bin
+
+WORKDIR ${SHARED_DIRECTORY}/DotNet/lib/
+RUN cp -r /usr/irissys/dev/dotnet/bin/Core21/* ./
 
 WORKDIR /opt/app
 COPY irissession.sh /
@@ -26,7 +37,7 @@ USER irisowner
 
 COPY ./Installer.cls ./
 COPY ./src ./src/
-COPY ./iris.key /usr/irissys/mgr/
+
 SHELL ["/irissession.sh"]
 
 
@@ -41,5 +52,5 @@ RUN \
 # bringing the standard shell back
 SHELL ["/bin/bash", "-c"]
 
-WORKDIR /datavol
+
 CMD [ "-l", "/usr/irissys/mgr/messages.log" ]

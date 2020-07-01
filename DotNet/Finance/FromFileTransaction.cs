@@ -24,7 +24,8 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
         foreach (string file in folder) {
 
             // Ignore .keep file
-            if (file == "/datavol/data/in/.keep") {continue;}
+            string[] SplitFilePath = file.Split(Path.DirectorySeparatorChar);
+            if ( SplitFilePath[(SplitFilePath.Length-1)] == ".keep") {continue;}
 
             // Enumerate through lines of file
             IEnumerable<string> FileLines = File.ReadLines(file);

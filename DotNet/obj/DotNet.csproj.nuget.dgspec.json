@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/datavol/DotNet/DotNet.csproj": {}
+    "/home/project/shared/Samples-PEX-Course/DotNet/DotNet.csproj": {}
   },
   "projects": {
-    "/datavol/DotNet/DotNet.csproj": {
+    "/home/project/shared/Samples-PEX-Course/DotNet/DotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
+        "projectUniqueName": "/home/project/shared/Samples-PEX-Course/DotNet/DotNet.csproj",
         "projectName": "DotNet",
-        "projectPath": "/datavol/DotNet/DotNet.csproj",
+        "projectPath": "/home/project/shared/Samples-PEX-Course/DotNet/DotNet.csproj",
         "packagesPath": "/home/irisowner/.nuget/packages/",
-        "outputPath": "/datavol/DotNet/obj/",
+        "outputPath": "/home/project/shared/Samples-PEX-Course/DotNet/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/datavol/DotNet/nuget.config",
+          "/home/project/shared/Samples-PEX-Course/DotNet/nuget.config",
           "/home/irisowner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "/usr/irissys/dev/dotnet/bin/Core21/": {},
+          "/home/project/shared/Samples-PEX-Course/DotNet/./lib": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

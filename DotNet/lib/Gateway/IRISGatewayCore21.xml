@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IRISGatewayCore21</name>
+    </assembly>
+    <members>
+        <member name="T:InterSystems.Data.IRISClient.Gateway.Service">
+            <summary>DotNet Gateway Service interface</summary>
+        </member>
+        <member name="M:InterSystems.Data.IRISClient.Gateway.Service.execute(System.Byte[])">
+            <summary>This method is to be implemented by Service implementations.</summary>
+            <param name="args">arguments</param>
+            <returns>results as a byte array</returns>
+        </member>
+        <member name="M:InterSystems.Data.IRISClient.Gateway.XMLClassGenerator.addAttribute(System.String,System.String)">
+            XML writes
+        </member>
+    </members>
+</doc>
