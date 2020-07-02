@@ -32,7 +32,8 @@ mkdir -p ${SHARED_DIRECTORY}/data/ToBankOut/ && chown irisowner ${SHARED_DIRECTO
 COPY ./data/sampleRequest.txt ${SHARED_DIRECTORY}/data/
 
 # Copy objectscript code.
-COPY ./src/* ${SHARED_DIRECTORY}/src/
+RUN mkdir ${SHARED_DIRECTORY}/src/
+COPY ./src/ ${SHARED_DIRECTORY}/src/
 
 RUN ls ${SHARED_DIRECTORY}/src/
 
@@ -40,8 +41,8 @@ RUN ls ${SHARED_DIRECTORY}/src/
 COPY ./MakeProject.sh ./
 
 # Copy contents of Java & .NET directories.
-COPY ./Java/* ${SHARED_DIRECTORY}/java/
-COPY DotNet/* ${SHARED_DIRECTORY}/DotNet/
+COPY ./Java/ ${SHARED_DIRECTORY}/Java/
+COPY DotNet/ ${SHARED_DIRECTORY}/DotNet/
 
 # Copy jar files to shared volume
 WORKDIR ${SHARED_DIRECTORY}/Java/lib/
@@ -63,7 +64,7 @@ RUN chmod +x ${SHARED_DIRECTORY}/irissession.sh
 
 
 USER irisowner
-WORKDIR ${SHARED_DIRECTORY}
+WORKDIR /usr/irissys/mgr/
 SHELL ["/home/project/shared/Samples-PEX-Course/irissession.sh"]
 
 RUN \
