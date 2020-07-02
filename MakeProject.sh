@@ -2,8 +2,6 @@
 
 echo "Beginning"
 
-javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java
+javac -d /home/project/shared/Samples-PEX-Course/Java/bin /home/project/shared/Samples-PEX-Course/Java/src/Finance/*.java
 
-cd /datavol/DotNet/
-
-dotnet build
+dotnet build /home/project/shared/Samples-PEX-Course/DotNet/DotNet.csproj

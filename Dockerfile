@@ -1,8 +1,8 @@
 FROM store/intersystems/iris-community:2020.2.0.211.0
 USER root
-# https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
-RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
+RUN echo 'umask 000' >> /root/.bashrc
 
+# Install .NET & Java
 RUN apt-get update && \
     apt-get install -y openjdk-8-jdk && \
     wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
@@ -13,42 +13,66 @@ RUN apt-get update && \
     apt-get install -y dotnet-runtime-2.1 && \ 
     apt-get clean 
 
+# Shared Volume directory ARG
 ARG SHARED_DIRECTORY=/home/project/shared/Samples-PEX-Course
-
+RUN mkdir -p ${SHARED_DIRECTORY} && chown irisowner ${SHARED_DIRECTORY}
+# Running Printev to debug
 RUN printenv
+
+# Java home
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 
+# Make production input and output directories.
+RUN mkdir -p ${SHARED_DIRECTORY}/Java/lib/ && chown irisowner  ${SHARED_DIRECTORY}/Java/lib/ &&\
+mkdir -p ${SHARED_DIRECTORY}/data/in/ && chown irisowner ${SHARED_DIRECTORY}/data/in/ &&\
+mkdir -p  ${SHARED_DIRECTORY}/data/FromBankOut/ &&  chown irisowner ${SHARED_DIRECTORY}/data/FromBankOut/  &&\
+mkdir -p ${SHARED_DIRECTORY}/data/ToBankOut/ && chown irisowner ${SHARED_DIRECTORY}/data/ToBankOut/
+
+# Copy sample production message
+COPY ./data/sampleRequest.txt ${SHARED_DIRECTORY}/data/
+
+# Copy objectscript code.
+COPY ./src/* ${SHARED_DIRECTORY}/src/
+
+RUN ls ${SHARED_DIRECTORY}/src/
+
+# Copy compiler script
+COPY ./MakeProject.sh ./
+
+# Copy contents of Java & .NET directories.
+COPY ./Java/* ${SHARED_DIRECTORY}/java/
+COPY DotNet/* ${SHARED_DIRECTORY}/DotNet/
+
+# Copy jar files to shared volume
 WORKDIR ${SHARED_DIRECTORY}/Java/lib/
 RUN cp -r /usr/irissys/dev/java/lib/jackson/* ./
 RUN cp -r /usr/irissys/dev/java/lib/JDK18/* ./
 RUN cp -r /usr/irissys/dev/java/lib/gson/* ./
- 
+RUN ls -l ${SHARED_DIRECTORY}/Java/lib/
+
+# Declare classpath
 ENV CLASSPATH=${SHARED_DIRECTORY}/Java/lib/*:${SHARED_DIRECTORY}/Java/bin
 
-WORKDIR ${SHARED_DIRECTORY}/DotNet/lib/
-RUN cp -r /usr/irissys/dev/dotnet/bin/Core21/* ./
+# Copy .NET nuget packages to shared volume.
+RUN mkdir -p /home/project/shared/Samples-PEX-Course/DotNet/lib/
+RUN cp -r /usr/irissys/dev/dotnet/bin/Core21/* ${SHARED_DIRECTORY}/DotNet/lib/
 
-WORKDIR /opt/app
-COPY irissession.sh /
-RUN chmod +x /irissession.sh 
+# Copy InterSystems IRIS shell script to shared directory.
+COPY ./irissession.sh ${SHARED_DIRECTORY}/
+RUN chmod +x ${SHARED_DIRECTORY}/irissession.sh 
+
 
 USER irisowner
-
-
-COPY ./Installer.cls ./
-COPY ./src ./src/
-
-SHELL ["/irissession.sh"]
-
-
+WORKDIR ${SHARED_DIRECTORY}
+SHELL ["/home/project/shared/Samples-PEX-Course/irissession.sh"]
 
 RUN \
-    Do $system.OBJ.Load("/opt/app/Installer.cls","ck") \
+    set shared = "/home/project/shared/Samples-PEX-Course/" \
+    Do $system.OBJ.LoadDir(shared _ "/src/","ck",,1) \
+    # do ##class(Security.Users).Import(shared _ "/src/UsersExport.xml") \
     Set sc = ##class(App.Installer).setup(, 3) \
     zn "INTEROP" \
-    Do $system.OBJ.LoadDir("/opt/app/src/","ck",,1) \
     Do ##class(Setup.GatewayMaker).BuildGateways() 
-
 # bringing the standard shell back
 SHELL ["/bin/bash", "-c"]
 
