@@ -1,5 +1,6 @@
 package Finance;
 import Finance.TransactionRequest;
+import Finance.TransactionResponse;
 
 
 public class ProcessPaymentRequest extends com.intersystems.enslib.pex.BusinessProcess {
@@ -29,8 +30,15 @@ public class ProcessPaymentRequest extends com.intersystems.enslib.pex.BusinessP
             // Send payment request to paying financial institution using synchronous request.
             Object response = SendRequestSync("ToPayFromOperation", request);
 
-            // Send payment request to receiving financial institution using an asynchronous call.
-            SendRequestAsync("ToPayToOperation", request);
+            // Cast response from bank into appropriate class
+            TransactionResponse bankResponse = (TransactionResponse)response;
+
+            // Check response from paying bank for approval before sending message to receiving bank
+            if (bankResponse.approved) {
+                // Send payment request to receiving financial institution using an asynchronous call.
+                SendRequestAsync("ToPayToOperation", request);
+            }
+
             
 
 
