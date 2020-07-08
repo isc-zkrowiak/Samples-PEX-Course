@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="irensaltali.currency" Version="1.0.2" />
     <PackageReference Include="IRISGatewayCore21" Version="1.0.0" />
+    <PackageReference Include="IRISProviderCore21" Version="1.0.0" />
   </ItemGroup>
 
 

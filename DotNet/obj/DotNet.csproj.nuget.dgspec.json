@@ -45,11 +45,19 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "IRISProviderCore21": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "irensaltali.currency": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [

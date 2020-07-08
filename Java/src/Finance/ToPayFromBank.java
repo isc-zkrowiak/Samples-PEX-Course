@@ -6,7 +6,7 @@ import java.io.FileWriter; // Package to write to files.
 import java.io.File;   // Package to work with files.
 import java.util.Date; // Package for working with dates.
 import java.text.SimpleDateFormat; // Package to format date strings
-
+import Finance.TransactionResponse;
 
 public class ToPayFromBank extends com.intersystems.enslib.pex.BusinessOperation {
 
@@ -47,8 +47,12 @@ public class ToPayFromBank extends com.intersystems.enslib.pex.BusinessOperation
         writer.write("Account: " + request.PayFrom.AccountNumber + System.lineSeparator());
         writer.write("Amount: " + request.TransactionAmount);
         writer.close();
+        
+        TransactionResponse response = new TransactionResponse();
 
-        return null;
+        response.approved = true;
+
+        return response;
 
        
        
