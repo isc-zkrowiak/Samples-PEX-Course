@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UsersExport>
+<Users>
+    <AccountNeverExpires>true</AccountNeverExpires>
+    <AutheEnabled>0</AutheEnabled>
+    <ChangePassword>false</ChangePassword>
+    <CreateDateTime>64422,64441.443</CreateDateTime>
+    <CreateUsername>SuperUser</CreateUsername>
+    <EmailAddress>default@isclabs.com</EmailAddress>
+    <Enabled>true</Enabled>
+    <ExpirationDate>1840-12-31</ExpirationDate>
+    <Flags>1</Flags>
+    <FullName>Tech User</FullName>
+    <HOTPKey>EhEPoKIe+wA2Y1JkY9GeuUVv1Ho=</HOTPKey>
+    <HOTPKeyGenerate>false</HOTPKeyGenerate>
+    <HOTPKeyDisplay>false</HOTPKeyDisplay>
+    <LastModifiedDateTime>64422,64441.443</LastModifiedDateTime>
+    <LastModifiedUsername>SuperUser</LastModifiedUsername>
+    <Name>tech</Name>
+    <NameSpace>USER</NameSpace>
+    <Password>Vq4t9AKj+yyFqYBfl6nb3lbSuXw=</Password>
+    <PasswordNeverExpires>true</PasswordNeverExpires>
+    <PasswordChangedDateTime>64422,64441.443</PasswordChangedDateTime>
+    <Roles>
+      <RolesItem>%All</RolesItem>
+    </Roles>
+    <Salt>zxy1tAs7yRc=</Salt>
+  </Users>
+</UsersExport>

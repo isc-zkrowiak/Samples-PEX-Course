@@ -62,15 +62,16 @@ RUN cp -r /usr/irissys/dev/dotnet/bin/Core21/* ${SHARED_DIRECTORY}/DotNet/lib/
 COPY ./irissession.sh ${SHARED_DIRECTORY}/
 RUN chmod +x ${SHARED_DIRECTORY}/irissession.sh 
 
+ 
 
 USER irisowner
 WORKDIR /usr/irissys/mgr/
+COPY ./UsersExport.xml ./
 SHELL ["/home/project/shared/Samples-PEX-Course/irissession.sh"]
 
 RUN \
     set shared = "/home/project/shared/Samples-PEX-Course/" \
     Do $system.OBJ.LoadDir(shared _ "/src/","ck",,1) \
-    # do ##class(Security.Users).Import(shared _ "/src/UsersExport.xml") \
     Set sc = ##class(App.Installer).setup(, 3) \
     zn "INTEROP" \
     Do ##class(Setup.GatewayMaker).BuildGateways() 

@@ -8,6 +8,7 @@ $@
 if '\$Get(sc) do ##class(%SYSTEM.Process).Terminate(, 1)
 zn "%SYS"
 do ##class(SYS.Container).QuiesceForBundling()
+do ##class(Security.Users).Import("/usr/irissys/mgr/UsersExport.xml")
 halt
 EOF
 
