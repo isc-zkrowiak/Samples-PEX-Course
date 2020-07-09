@@ -10,6 +10,7 @@ services:
     volumes:
       - ./Java/src:/home/project/shared/Samples-PEX-Course/Java/src 
       - ./DotNet/Finance:/home/project/shared/Samples-PEX-Course/DotNet/Finance
+      - ./data/:/home/project/shared/Samples-PEX-Course/data
   
 
 volumes: 
