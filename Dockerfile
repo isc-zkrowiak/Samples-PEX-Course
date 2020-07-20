@@ -77,7 +77,7 @@ SHELL ["/home/project/shared/Samples-PEX-Course/irissession.sh"]
 
 RUN \
     set shared = "/home/project/shared/Samples-PEX-Course/" \
-    Do $system.OBJ.LoadDir(shared _ "/src/","ck",,1) \
+    Do $system.OBJ.Load(shared _ "src/Installer.cls","ck",,) \
     Set sc = ##class(App.Installer).setup(, 3) \
     zn "INTEROP" \
     Do ##class(Setup.GatewayMaker).BuildGateways() 
