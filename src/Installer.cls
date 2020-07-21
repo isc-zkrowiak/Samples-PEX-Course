@@ -12,8 +12,8 @@ XData MyInstall [ XMLNamespace = INSTALLER ]
 
   <Namespace Name="${NAMESPACE}" Code="${DBNAME}-CODE" Data="${DBNAME}-DATA" Create="yes" Ensemble="1">
     <Configuration>
-      <Database Name="${DBNAME}-CODE" Dir="${APPPATH}${DBNAME}-CODE" Create="yes" Resource="${RESOURCE}"/>
-      <Database Name="${DBNAME}-DATA" Dir="${APPPATH}${DBNAME}-DATA" Create="yes" Resource="${RESOURCE}"/>
+      <Database Name="${DBNAME}-CODE" Dir="/usr/irissys/mgr/interop/${DBNAME}-CODE" Create="yes" Resource="${RESOURCE}"/>
+      <Database Name="${DBNAME}-DATA" Dir="/usr/irissys/mgr/interop/${DBNAME}-DATA" Create="yes" Resource="${RESOURCE}"/>
     </Configuration>
 
     <Import File="${SOURCESPATH}" Recurse="1"/>
