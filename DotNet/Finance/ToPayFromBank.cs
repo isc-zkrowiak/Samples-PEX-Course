@@ -43,7 +43,11 @@ namespace Finance{
             // Write all lines to file.
             File.WriteAllLines(OutputPath, writer);
 
-            return null;
+            TransactionResponse response = new TransactionResponse();
+
+            response.approved = true;
+
+            return response;
         }
     }    
 }

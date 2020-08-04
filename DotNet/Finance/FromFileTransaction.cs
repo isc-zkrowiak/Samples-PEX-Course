@@ -4,6 +4,8 @@ using System.IO;  // Import the File class
 using System.Collections.Generic; // Import class to deal with enumerators
 using System.Globalization;
 
+
+
 namespace Finance {
 
 public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
@@ -12,7 +14,9 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
     public string InboundFilePath; // Path to input directory.
 
     public override void OnTearDown() {} // PEX abstract method. Must override.
-    public override void OnInit() {} // PEX abstract method. Must override.
+    public override void OnInit() {
+    
+    } // PEX abstract method. Must override.
 
     // OnProcessInput is called at an interval specified in the 'call interval' setting in the production.
     public override object OnProcessInput(object messageInput)  {
@@ -24,7 +28,8 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
         foreach (string file in folder) {
 
             // Ignore .keep file
-            if (file == "/datavol/data/in/.keep") {continue;}
+            string[] SplitFilePath = file.Split(Path.DirectorySeparatorChar);
+            if ( SplitFilePath[(SplitFilePath.Length-1)] == ".keep") {continue;}
 
             // Enumerate through lines of file
             IEnumerable<string> FileLines = File.ReadLines(file);

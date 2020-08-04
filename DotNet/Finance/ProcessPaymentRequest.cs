@@ -31,9 +31,18 @@ namespace Finance{
 
                 // Send payment request to paying financial institution using synchronous request.
                 object response = SendRequestSync("ToPayFromOperation", request);
+
+                 // Cast response from bank into appropriate class
+                TransactionResponse bankResponse = (TransactionResponse)response;
+
+                // Check response from paying bank for approval before sending message to receiving bank
+                if (bankResponse.approved){
+
+                    // Send payment request to receiving financial institution using an asynchronous call.
+                    SendRequestAsync("ToPayToOperation", request);
+                }
                 
-                // Send payment request to receiving financial institution using an asynchronous call.
-                SendRequestAsync("ToPayToOperation", request);
+
                 
 
 

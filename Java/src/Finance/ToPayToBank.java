@@ -54,7 +54,7 @@ public class ToPayToBank extends com.intersystems.enslib.pex.BusinessOperation{
         writer.close();
 
         
-        return true;
+        return null;
 
         
     

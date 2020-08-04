@@ -5,7 +5,7 @@ namespace Finance{
     using Finance;
 
     // Main message class.
-    public class TransactionRequest : InterSystems.EnsLib.PEX.Message {
+    public class  TransactionRequest: InterSystems.EnsLib.PEX.Message {
 
 
 
