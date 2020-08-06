@@ -1,4 +1,4 @@
-FROM store/intersystems/iris-community:2020.3.0.200.0
+FROM store/intersystems/iris-community:2020.2.0.211.0
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
