@@ -1,4 +1,4 @@
-FROM docker.iscinternal.com/intersystems/iris:2020.2.0SQL1.510.0
+FROM store/intersystems/iris-community:2020.3.0.200.0
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
@@ -24,15 +24,13 @@ RUN chmod +x /irissession.sh
 USER irisowner
 
 
-COPY ./Installer.cls ./
-COPY ./src ./src/
-COPY ./iris.key /usr/irissys/mgr/
+COPY ./src/ ./src
 SHELL ["/irissession.sh"]
 
 
 
 RUN \
-    Do $system.OBJ.Load("/opt/app/Installer.cls","ck") \
+    Do $system.OBJ.Load("/opt/app/src/Installer.cls","ck") \
     Set sc = ##class(App.Installer).setup(, 3) \
     zn "INTEROP" \
     Do $system.OBJ.LoadDir("/opt/app/src/","ck",,1) \

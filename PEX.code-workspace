@@ -7,14 +7,16 @@
 	],
 	"settings": {
 		"objectscript.conn": {
-			"active": true,
+			"active": false,
 			"ns": "INTEROP",
 			"user": "SuperUser",
 			"https": false,
-			"docker-compose":{
+			"docker-compose": {
 				"service": "iris",
 				"internalPort": 52773
-			}
+			},
+			"password": "",
+			"username": "SuperUser"
 		},
 		"objectscript.conn.active": true,
 		"objectscript.conn.password": "",
