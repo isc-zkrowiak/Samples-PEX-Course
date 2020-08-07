@@ -19,17 +19,11 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
     } // PEX abstract method. Must override.
 
     // OnProcessInput is called at an interval specified in the 'call interval' setting in the production.
-    public override object OnProcessInput(object messageInput)  {
+    public override object OnProcessInput(object input)  {
         
-        // Check input directory for files and create enumerable containing file paths.
-        IEnumerable<string> folder = Directory.EnumerateFiles(InboundFilePath);
-        
-        // Enumerate over files in the directory.
-        foreach (string file in folder) {
+            // Cast input to string
 
-            // Ignore .keep file
-            string[] SplitFilePath = file.Split(Path.DirectorySeparatorChar);
-            if ( SplitFilePath[(SplitFilePath.Length-1)] == ".keep") {continue;}
+            string file = (string)input;
 
             // Enumerate through lines of file
             IEnumerable<string> FileLines = File.ReadLines(file);
@@ -77,7 +71,7 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
               
             }
 
-        }
+        
         return null;
     }
 } 

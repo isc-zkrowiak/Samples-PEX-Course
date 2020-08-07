@@ -10,7 +10,7 @@
         "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
         "projectName": "DotNet",
         "projectPath": "/datavol/DotNet/DotNet.csproj",
-        "packagesPath": "/home/irisowner/.nuget/packages/",
+        "packagesPath": "/root/.nuget/packages/",
         "outputPath": "/datavol/DotNet/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -18,7 +18,7 @@
         ],
         "configFilePaths": [
           "/datavol/DotNet/nuget.config",
-          "/home/irisowner/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"

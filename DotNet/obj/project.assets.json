@@ -861,7 +861,7 @@
   },
   "libraries": {
     "IRISGatewayCore21/1.0.0": {
-      "sha512": "0aKDoXpN9ejCIQirsqQRU+DrYTonxdvRK+0KV+wHrO5bojZ8TddjWZf1hgWPvdP1dIhK1UDYrTHfd2ytFcGeGw==",
+      "sha512": "VZ2/sebPKR8FeXbFMS4mKAQBK7IPHHJ2ZEPoogWjXoJl+nALlAgqbZUbTsb8uKVfiiDGk6BEawzKQ/nSVQ/bcA==",
       "type": "package",
       "path": "irisgatewaycore21/1.0.0",
       "files": [
@@ -874,7 +874,7 @@
       ]
     },
     "IRISProviderCore21/1.0.0": {
-      "sha512": "OORjpn1r4PTpWv+2h/kdVx8V6Gu49IkDo4sXeQF6fHdoHpDJfoW1z1dsWF/SD/hmo5+8qlg2Ivecu0fa69ofXA==",
+      "sha512": "6xwPjhQjlCLP1JV7vn1ZVx/miC1rGTFkF7RDeSJDtibGS5Ib8Qa1enfJGNwt68swighKmK6kXdxNRgFtwL9DfQ==",
       "type": "package",
       "path": "irisprovidercore21/1.0.0",
       "files": [
@@ -3595,7 +3595,7 @@
     ]
   },
   "packageFolders": {
-    "/home/irisowner/.nuget/packages/": {},
+    "/root/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
@@ -3604,7 +3604,7 @@
       "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
       "projectName": "DotNet",
       "projectPath": "/datavol/DotNet/DotNet.csproj",
-      "packagesPath": "/home/irisowner/.nuget/packages/",
+      "packagesPath": "/root/.nuget/packages/",
       "outputPath": "/datavol/DotNet/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -3612,7 +3612,7 @@
       ],
       "configFilePaths": [
         "/datavol/DotNet/nuget.config",
-        "/home/irisowner/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
