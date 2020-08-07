@@ -17,6 +17,7 @@ To run the code
 
 ### Compiling:
 
+* Start a terminal session inside of the docker container: `docker-compose exec -u root iris bash`
 * Compile dotnet code: In `Samples-PEX-Course/DotNet` type `dotnet build`
 * Compile Java code: type `javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java`
 
