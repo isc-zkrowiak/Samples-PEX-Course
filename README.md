@@ -20,3 +20,7 @@ To run the code
 * Compile dotnet code: In `Samples-PEX-Course/DotNet` type `dotnet build`
 * Compile Java code: type `javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java`
 
+# Note: 
+   An alternate version of this production that does not implement inbound or outbound adapters can be found on the NoAdapters branch.
+   
+   To clone: `git clone -b NoAdapters https://github.com/intersystems/Samples-PEX-Course`
