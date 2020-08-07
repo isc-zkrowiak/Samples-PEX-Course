@@ -15,3 +15,8 @@ To run the code
 
 4. Test the production by copying `Samples-PEX-Course/data/sampleRequest.txt` into `Samples-PEX-Course/data/in`
 
+### Compiling:
+
+* Compile dotnet code: In `Samples-PEX-Course/DotNet` type `dotnet build`
+* Compile Java code: type `javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java`
+
