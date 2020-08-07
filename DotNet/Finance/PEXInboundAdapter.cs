@@ -1,7 +1,7 @@
 using System;  
 using System.IO;  // Import the File class
 using System.Collections.Generic; // Import class to deal with enumerators
-using System.Globalization;
+
 
 
 namespace Finance {
@@ -26,6 +26,8 @@ namespace Finance {
           // Ignore .keep file
             string[] SplitFilePath = file.Split(Path.DirectorySeparatorChar);
             if ( SplitFilePath[(SplitFilePath.Length-1)] == ".keep") {continue;}
+
+            // Call ProcessInput method of connected business service
             BusinessHost.ProcessInput(file);
         }
     }

@@ -15,18 +15,19 @@ namespace Finance{
             // Cast input object to expected class.
             TransactionRequest request = (TransactionRequest)input;
 
-            // Create a string list to store file lines.
+            // Create a StringBuilder object to store file lines.
             StringBuilder writer = new StringBuilder();
             writer.Append ("Debit request:" + Environment.NewLine);
             writer.Append("Route:" + request.PayFrom.RoutingNumber + Environment.NewLine);
             writer.Append("Account: " + request.PayFrom.AccountNumber + Environment.NewLine);
             writer.Append("Amount: " + request.TransactionAmount);
             
-            // Write all lines to file.
+            // Write all lines to file using OutboundAdapter
             Adapter.invoke("WriteToFile", writer.ToString());
 
-            TransactionResponse response = new TransactionResponse();
 
+            // Instantiate and populate an approval response object to return to requesting business process
+            TransactionResponse response = new TransactionResponse();
             response.approved = true;
 
             return response;

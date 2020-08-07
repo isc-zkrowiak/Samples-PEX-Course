@@ -11,7 +11,7 @@ namespace Finance {
 public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
 
     public string TargetComponentNames; // Comma separated list of target production components. Set at runtime.
-    public string InboundFilePath; // Path to input directory.
+
 
     public override void OnTearDown() {} // PEX abstract method. Must override.
     public override void OnInit() {
@@ -21,8 +21,7 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
     // OnProcessInput is called at an interval specified in the 'call interval' setting in the production.
     public override object OnProcessInput(object input)  {
         
-            // Cast input to string
-
+            // Cast input to string representing file path
             string file = (string)input;
 
             // Enumerate through lines of file
@@ -35,9 +34,6 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
 
             // Set fields of message. An actual implementation would need to verify that
             // message structure is valid.
-            
-
-            
             request.TransactionAmount = Decimal.Parse("55.44");
             reader.MoveNext();
             string tempString = reader.Current;
@@ -64,7 +60,7 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
             // Delete file after reading data.
             File.Delete(file);
 
-            // iterate through target business components and send request message
+            // Iterate through target business components and send request message
             string[] targetNames =  TargetComponentNames.Split(",");
             foreach (string name in targetNames){
               SendRequestAsync(name, request);

@@ -5,12 +5,13 @@ namespace Finance {
 
     class PEXOutboundAdapter :  InterSystems.EnsLib.PEX.OutboundAdapter {
 
-        public string FilePath;
+        public string FilePath; // Path to write output file.
         public override void OnTearDown() {}
         public override void OnInit() {}
 
         public object WriteToFile(object input) {
-
+            
+            // Cast output message to string
             string OutputMessage = (string)input;
 
             // Allow users to enter file path with or without trailing path separator.
@@ -24,6 +25,7 @@ namespace Finance {
             // Append to qualified file path.
             string OutputPath = FilePath + today;
 
+            // Write text in OutputMessage to the file specified in OutputPath
             File.WriteAllText(OutputPath, OutputMessage);
             return null;
         }
