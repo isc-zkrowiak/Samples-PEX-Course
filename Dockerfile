@@ -8,6 +8,7 @@ RUN apt-get update && \
     wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && \
     apt-get install -y apt-transport-https && \
+    apt-get install -y dos2unix && \
     apt-get update && \
     apt-get install -y dotnet-sdk-2.1 && \
     apt-get install -y dotnet-runtime-2.1 && \ 
@@ -19,6 +20,7 @@ ENV CLASSPATH=/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/ja
 
 WORKDIR /opt/app
 COPY irissession.sh /
+RUN dos2unix /irissession.sh
 RUN chmod +x /irissession.sh 
 
 USER irisowner
@@ -33,7 +35,6 @@ RUN \
     Do $system.OBJ.Load("/opt/app/src/Installer.cls","ck") \
     Set sc = ##class(App.Installer).setup(, 3) \
     zn "INTEROP" \
-    Do $system.OBJ.LoadDir("/opt/app/src/","ck",,1) \
     Do ##class(Setup.GatewayMaker).BuildGateways() 
 
 # bringing the standard shell back
