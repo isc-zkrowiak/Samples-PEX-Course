@@ -15,18 +15,20 @@ This sample code demonstrates the use of the Production EXtension, or PEX. Using
 
 4. Test the production by copying `Samples-PEX-Course/data/sampleRequest.txt` into `Samples-PEX-Course/data/in`.
 
+5. Here are a few other useful commands:
+  * Start a terminal session inside of the docker container: `docker-compose exec -u root iris bash`
+  * Compile dotnet code: In `Samples-PEX-Course/DotNet` type `dotnet build`
+  * Compile Java code: type `javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java`
+
+  
 ## Output
 If all works correctly, you will see two new files: one written to the `FromBankOut/` directory and one to the `ToBankOut/` directory. Each of these files represents a communication with a fictional bank. This production is a simplified version of a payment processing application.
 
+# Note: 
+   An alternate version of this production that does not implement inbound or outbound adapters can be found on the NoAdapters branch.
+   
+   To clone: `git clone -b NoAdapters https://github.com/intersystems/Samples-PEX-Course`
 
 ## Keep Exploring
 To continue learning about PEX, visit the [PEX: Developing Productions with Java and .NET](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=EPEX) page on the InterSystems documentation website.
 
-
-
-
-
-Use or operation of this code is subject to acceptance of the license available in the code repository for this code.
-
-
-ext
