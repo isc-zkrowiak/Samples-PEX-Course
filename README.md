@@ -11,7 +11,7 @@ To run the code
 
 2. Management portal url: [localhost:52773/csp/sys/UtilHome.csp](localhost:52773/csp/sys/UtilHome.csp)
 
-3. Dotnet and Java PEX productions can be found in the INTEROP namespace.
+3. Dotnet and Java PEX productions can be found in the INTEROP namespace in the `Finance` package.
 
 4. Test the production by copying `Samples-PEX-Course/data/sampleRequest.txt` into `Samples-PEX-Course/data/in`
 
