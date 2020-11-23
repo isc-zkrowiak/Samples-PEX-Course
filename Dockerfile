@@ -19,15 +19,15 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 ENV CLASSPATH=/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*
 
 WORKDIR /opt/app
-COPY irissession.sh /
-RUN dos2unix /irissession.sh
-RUN chmod +x /irissession.sh 
+COPY iris.script /
+RUN dos2unix /iris.script
+RUN chmod +x /iris.script 
 
 USER irisowner
 
 
 COPY ./src/ ./src
-SHELL ["/irissession.sh"]
+SHELL ["/iris.script"]
 
 
 
