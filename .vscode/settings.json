@@ -2,7 +2,6 @@
     "objectscript.conn": {
         "active": true,
         "ns": "INTEROP",
-        "user": "SuperUser",
         "https": false,
         "docker-compose": {
             "service": "iris",

@@ -1,0 +1,7 @@
+do $System.OBJ.LoadDir("/opt/app/src","ck",,1)
+set sc = ##class(App.Installer).setup(, 3) 
+zn "INTEROP" 
+do ##class(Setup.GatewayMaker).BuildGateways() 
+zn "%SYS"
+do ##class(Security.Users).UnExpireUserPasswords("*")
+halt

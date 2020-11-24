@@ -2,8 +2,8 @@
 
 echo "Beginning"
 
-javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java
+javac -d /irisdev/app/Java/bin /irisdev/app/Java/src/Finance/*.java
 
-cd /datavol/DotNet/
+cd /irisdev/app/DotNet/
 
-dotnet build /datavol/DotNet/DotNet.csproj
+dotnet build /irisdev/app/DotNet/DotNet.csproj

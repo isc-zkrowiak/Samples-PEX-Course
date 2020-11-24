@@ -8,7 +8,7 @@ public class TransactionRequest extends com.intersystems.enslib.pex.Message {
 
     public double TransactionAmount;
     public PaymentProfile PayFrom;
-    public PaymentProfile PayTo;
+    public PaymentProfile PayTo;  
     public String FromCurrency;
     public String ToCurrency;
 
