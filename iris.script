@@ -1,19 +1,7 @@
-#!/bin/bash
-
-iris start $ISC_PACKAGE_INSTANCENAME quietly
- 
-cat << EOF | iris session $ISC_PACKAGE_INSTANCENAME -U %SYS
-do ##class(%SYSTEM.Process).CurrentDirectory("$PWD")
-$@
-if '\$Get(sc) do ##class(%SYSTEM.Process).Terminate(, 1)
+do $System.OBJ.LoadDir("/opt/app/src","ck",,1)
+set sc = ##class(App.Installer).setup(, 3) 
+zn "INTEROP" 
+do ##class(Setup.GatewayMaker).BuildGateways() 
 zn "%SYS"
-do ##class(SYS.Container).QuiesceForBundling()
-Do ##class(Security.Users).UnExpireUserPasswords("*")
+do ##class(Security.Users).UnExpireUserPasswords("*")
 halt
-EOF
-
-exit=$?
-
-iris stop $ISC_PACKAGE_INSTANCENAME quietly
-
-exit $exit

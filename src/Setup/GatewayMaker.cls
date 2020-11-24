@@ -57,7 +57,7 @@ ClassMethod BuildDotNetGateway() As %Status
 
         set gw = ##class(%Net.Remote.ObjectGateway).%New()
         set gw.Port = "55555"
-        set gw.DotNetVersion = "Core2.0"
+        set gw.DotNetVersion = "Core2.1"
         set gw.Server = "0.0.0.0"
         set gw.Exec64 = 1
         set gw.Type = "2" //represents dotnet gateway type

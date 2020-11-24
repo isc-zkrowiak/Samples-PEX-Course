@@ -1,0 +1,5 @@
+TransactionAmount:59.43
+PayFrom:232422|23532532|TJohnson21
+PayTo:24224242|423533453|ERichards55
+FromCurrency:USD
+ToCurrency:USD

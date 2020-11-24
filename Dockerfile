@@ -1,4 +1,4 @@
-FROM store/intersystems/iris-community:2020.2.0.211.0
+FROM store/intersystems/iris-community:2020.3.0.221.0
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
@@ -16,29 +16,22 @@ RUN apt-get update && \
 
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-ENV CLASSPATH=/datavol/Java/lib/*:/datavol/Java/bin:/usr/irissys/dev/java/lib/jackson/jackson-core-2.10.2.jar:/usr/irissys/dev/java/lib/JDK18/*
+ENV CLASSPATH=/irisdev/app/Java/lib/*:/usr/irissys/dev/java/lib/JDK18/intersystems-utils-3.2.0.jar:/irisdev/app/Java/bin
 
 WORKDIR /opt/app
-COPY iris.script /
-RUN dos2unix /iris.script
-RUN chmod +x /iris.script 
+COPY iris.script /tmp/iris.script
+RUN dos2unix /tmp/iris.script
+RUN chmod +x /tmp/iris.script 
 
 USER irisowner
 
 
 COPY ./src/ ./src
-SHELL ["/iris.script"]
 
 
+RUN iris start IRIS \
+	&& iris session IRIS < /tmp/iris.script \
+    && iris stop IRIS quietly
 
-RUN \
-    Do $system.OBJ.Load("/opt/app/src/Installer.cls","ck") \
-    Set sc = ##class(App.Installer).setup(, 3) \
-    zn "INTEROP" \
-    Do ##class(Setup.GatewayMaker).BuildGateways() 
-
-# bringing the standard shell back
-SHELL ["/bin/bash", "-c"]
-
-WORKDIR /datavol
+WORKDIR /irisdev/app
 CMD [ "-l", "/usr/irissys/mgr/messages.log" ]
