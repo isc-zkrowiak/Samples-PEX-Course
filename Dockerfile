@@ -1,4 +1,4 @@
-FROM store/intersystems/iris-community:2020.3.0.221.0
+FROM store/intersystems/iris-community:2020.2.0.211.0
 USER root
 # https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=ADOCK_iris_iscmain
 RUN mkdir /opt/app && chown irisowner:irisowner /opt/app
@@ -16,7 +16,8 @@ RUN apt-get update && \
 
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-ENV CLASSPATH=/irisdev/app/Java/lib/*:/usr/irissys/dev/java/lib/JDK18/intersystems-utils-3.2.0.jar:/irisdev/app/Java/bin
+ARG JDK_PATHS=/usr/irissys/dev/java/lib/JDK18/intersystems-utils-3.2.0.jar:/usr/irissys/dev/java/lib/JDK18/intersystems-gateway-3.1.0.jar:/usr/irissys/dev/java/lib/JDK18/intersystems-jdbc-3.1.0.jar
+ENV CLASSPATH=/irisdev/app/Java/lib/*:/usr/irissys/dev/java/lib/jackson/*:/irisdev/app/Java/bin:/usr/irissys/dev/java/lib/gson/gson-2.8.5.jar:${JDK_PATHS}
 
 WORKDIR /opt/app
 COPY iris.script /tmp/iris.script
@@ -24,7 +25,6 @@ RUN dos2unix /tmp/iris.script
 RUN chmod +x /tmp/iris.script 
 
 USER irisowner
-
 
 COPY ./src/ ./src
 
