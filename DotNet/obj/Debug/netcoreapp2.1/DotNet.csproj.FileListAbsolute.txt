@@ -7,3 +7,12 @@
 /datavol/DotNet/obj/Debug/netcoreapp2.1/DotNet.AssemblyInfo.cs
 /datavol/DotNet/obj/Debug/netcoreapp2.1/DotNet.dll
 /datavol/DotNet/obj/Debug/netcoreapp2.1/DotNet.pdb
+/irisdev/app/DotNet/bin/Debug/netcoreapp2.1/DotNet.deps.json
+/irisdev/app/DotNet/bin/Debug/netcoreapp2.1/DotNet.dll
+/irisdev/app/DotNet/bin/Debug/netcoreapp2.1/DotNet.pdb
+/irisdev/app/DotNet/obj/Debug/netcoreapp2.1/DotNet.csprojAssemblyReference.cache
+/irisdev/app/DotNet/obj/Debug/netcoreapp2.1/DotNet.csproj.CoreCompileInputs.cache
+/irisdev/app/DotNet/obj/Debug/netcoreapp2.1/DotNet.AssemblyInfoInputs.cache
+/irisdev/app/DotNet/obj/Debug/netcoreapp2.1/DotNet.AssemblyInfo.cs
+/irisdev/app/DotNet/obj/Debug/netcoreapp2.1/DotNet.dll
+/irisdev/app/DotNet/obj/Debug/netcoreapp2.1/DotNet.pdb

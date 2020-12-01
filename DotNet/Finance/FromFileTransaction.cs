@@ -34,7 +34,7 @@ public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
 
             // Set fields of message. An actual implementation would need to verify that
             // message structure is valid.
-            request.TransactionAmount = Decimal.Parse("55.44");
+            request.TransactionAmount = Decimal.Parse(reader.Current.Split(":")[1]);
             reader.MoveNext();
             string tempString = reader.Current;
             string[] tempStringArray = tempString.Split(":");
