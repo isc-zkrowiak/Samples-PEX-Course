@@ -3595,24 +3595,24 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {},
+    "/home/irisowner/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/datavol/DotNet/DotNet.csproj",
+      "projectUniqueName": "/irisdev/app/DotNet/DotNet.csproj",
       "projectName": "DotNet",
-      "projectPath": "/datavol/DotNet/DotNet.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/datavol/DotNet/obj/",
+      "projectPath": "/irisdev/app/DotNet/DotNet.csproj",
+      "packagesPath": "/home/irisowner/.nuget/packages/",
+      "outputPath": "/irisdev/app/DotNet/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/datavol/DotNet/nuget.config",
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/irisdev/app/DotNet/nuget.config",
+        "/home/irisowner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

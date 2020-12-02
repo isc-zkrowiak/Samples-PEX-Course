@@ -30,6 +30,7 @@ namespace Finance {
             // Call ProcessInput method of connected business service
             BusinessHost.ProcessInput(file);
         }
+        return;
     }
   }
 }
