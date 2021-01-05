@@ -8,6 +8,7 @@ using System.Globalization;
 
 namespace Finance {
 
+// This class is for a PEX business service that reads a transaction request message from a file.
 public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
 
     public string TargetComponentNames; // Comma separated list of target production components. Set at runtime.

@@ -2,6 +2,7 @@ package Finance;
 
 import Finance.PaymentProfile;
 
+// Main PEX message class.
 public class TransactionRequest extends com.intersystems.enslib.pex.Message {
 
 

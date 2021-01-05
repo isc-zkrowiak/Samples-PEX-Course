@@ -1,6 +1,6 @@
 namespace Finance {
     
-    // nested field of TransactionRequest
+    // Property of TransactionRequest message.
     public class PaymentProfile {
         
         public int AccountNumber;

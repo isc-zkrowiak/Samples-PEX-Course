@@ -4,7 +4,7 @@ namespace Finance{
 
     using Finance;
 
-    // Main message class.
+    // This is a simple PEX class for communicating approval from the paying bank.
     public class  TransactionResponse: InterSystems.EnsLib.PEX.Message {
 
 

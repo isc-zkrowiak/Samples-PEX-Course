@@ -2,7 +2,8 @@ package Finance;
 import Finance.TransactionRequest;
 import Finance.TransactionResponse;
 
-
+// This class is for a PEX business process that sends a request to the paying bank, then, if 
+// it receives an approval response, sends  a request to the receiving bank.
 public class ProcessPaymentRequest extends com.intersystems.enslib.pex.BusinessProcess {
 
     // PEX abstract method. Must override.

@@ -5,6 +5,7 @@ import Finance.PaymentProfile;
 import Finance.TransactionResponse;
 import java.lang.StringBuffer;
 
+// This class is for the PEX business operation communicating with the paying bank
 public class ToPayFromBank extends com.intersystems.enslib.pex.BusinessOperation {
 
 

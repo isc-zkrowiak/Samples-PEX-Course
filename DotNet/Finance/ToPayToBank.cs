@@ -6,6 +6,7 @@ using System.Text; // Import class to deal with enumerators.
 
 namespace Finance{
 
+    // This class is for a PEX business operation communicating with the receiving bank
     public class ToPayToBank : InterSystems.EnsLib.PEX.BusinessOperation {
 
         // Filepath to output directory. Set at runtime.

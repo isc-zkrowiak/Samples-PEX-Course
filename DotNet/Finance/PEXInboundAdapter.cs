@@ -7,7 +7,7 @@ using System.Collections.Generic; // Import class to deal with enumerators
 namespace Finance {
 
 
-
+  // This class is for a PEX inbound adapter that abstracts the process of checking the input directory.
   public class PEXInboundAdapter :  InterSystems.EnsLib.PEX.InboundAdapter  {
 
     public String InboundFilePath; // Path to input directory.

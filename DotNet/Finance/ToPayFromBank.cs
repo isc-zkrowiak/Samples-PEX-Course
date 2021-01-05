@@ -3,6 +3,7 @@ using System.Text; // Import class to deal with enumerators.
 
 namespace Finance{
 
+    // This class is for the PEX business operation communicating with the paying bank
     public class ToPayFromBank : InterSystems.EnsLib.PEX.BusinessOperation {
 
 

@@ -4,7 +4,8 @@ using Finance;
 namespace Finance{
 
 
-
+    // This class is for a PEX business process that sends a request to the paying bank, then, if 
+    // it receives an approval response, sends  a request to the receiving bank.
     public class ProcessPaymentRequest : InterSystems.EnsLib.PEX.BusinessProcess {
 
         // PEX abstract method. Must override.

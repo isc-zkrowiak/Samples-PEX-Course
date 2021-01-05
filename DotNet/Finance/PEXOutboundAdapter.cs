@@ -3,6 +3,7 @@ using System.IO;  // Import the File class
 
 namespace Finance {
 
+    // This class is for a PEX outbound adapter.
     class PEXOutboundAdapter :  InterSystems.EnsLib.PEX.OutboundAdapter {
 
         public string FilePath; // Path to write output file.

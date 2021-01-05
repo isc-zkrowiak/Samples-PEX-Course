@@ -2,6 +2,7 @@ package Finance;
 import java.io.File;  // Import the File class.
 import java.io.FileNotFoundException;  // Import this class to handle errors.
 
+// This class is for a PEX inbound adapter that abstracts the process of checking the input directory.
 public class PEXInboundAdapter extends  com.intersystems.enslib.pex.InboundAdapter  {
 
     public String InboundFilePath; // Path to input directory.

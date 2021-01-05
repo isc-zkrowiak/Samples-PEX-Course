@@ -7,7 +7,7 @@ import Finance.TransactionRequest; // Import the Transaction message to send thr
 
 
 
-
+// This class is for a PEX business service that reads a transaction request message from a file.
 public class FromFileTransaction extends com.intersystems.enslib.pex.BusinessService {
     public String TargetComponentNames; // Comma separated list of target production components. Set at runtime.
     

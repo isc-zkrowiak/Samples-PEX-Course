@@ -17,8 +17,8 @@ This sample code demonstrates the use of the Production EXtension, or PEX. Using
 
 5. Here are a few other useful commands:
   * Start a Terminal session inside of the Docker container: `docker-compose exec -u root iris bash`
-  * Compile .NET code: Type `dotnet build` in `Samples-PEX-Course/DotNet`. 
-  * Compile Java code: Type `javac -d /datavol/Java/bin /datavol/Java/src/Finance/*.java`
+  * Compile .NET code: Type `dotnet build` in `/irisdev/app/DotNet`. 
+  * Compile Java code: Type `javac -d /irisdev/app/Java/bin /irisdev/app/Java/src/Finance/*.java`
 
   
 ## Output
