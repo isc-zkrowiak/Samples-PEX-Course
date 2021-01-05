@@ -7,7 +7,7 @@ services:
     restart: always
     hostname: IRIS
     ports:
-      - 52773
-      - 53773
+      - 52773:52773
+      - 53773:53773
     volumes:
       - ./:/irisdev/app
