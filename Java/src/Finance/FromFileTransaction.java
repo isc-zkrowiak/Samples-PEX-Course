@@ -7,13 +7,15 @@ import Finance.TransactionRequest; // Import the Transaction message to send thr
 
 
 
-// This class is for a PEX business service that reads a transaction request message from a file.
+// This class is for a PEX business service that reads a transaction request message from a file. It then parses the 
+// file format of that message and converts it into a Finance.TransactionRequest message object, before sending it to
+// another business component declared at runtime in the property TargetComponentNames
 public class FromFileTransaction extends com.intersystems.enslib.pex.BusinessService {
     public String TargetComponentNames; // Comma separated list of target production components. Set at runtime.
     
 
-    public void OnTearDown() {} // PEX abstract method. Must override.
-    public void OnInit() {} // PEX abstract method. Must override.
+    public void OnTearDown() {} // Abstract method in PEX superclass. Must override.
+    public void OnInit() {} // Abstract method in PEX superclass. Must override.
 
     // OnProcessInput is called at an interval specified in the 'call interval' setting in the production.
     public java.lang.Object OnProcessInput(java.lang.Object messageInput) throws java.lang.Exception {

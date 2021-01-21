@@ -6,7 +6,10 @@ import java.io.FileWriter; // Package to write to files.
 import java.util.Date; // Package for working with dates.
 import java.text.SimpleDateFormat; // Package to format date strings
 
-
+// This class implements the PEX OutboundAdapter super class. It takes requests from PEX components, usually
+// Business Operations, and abstracts connection logic to external systems. In this case, the two Business Operation
+// Components in the production, Finance.ToPayFromBank and Finance.ToPayToBank, both use the Invoke() method
+// To call the WriteToFile() method implemented here.
 public class PEXOutboundAdapter extends  com.intersystems.enslib.pex.OutboundAdapter  {
 
     public String FilePath; // Path to write output file.

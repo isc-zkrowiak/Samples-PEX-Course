@@ -8,16 +8,15 @@ using System.Globalization;
 
 namespace Finance {
 
-// This class is for a PEX business service that reads a transaction request message from a file.
-public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
+// This class is for a PEX business service that reads a transaction request message from a file. It then parses the 
+// file format of that message and converts it into a Finance.TransactionRequest message object, before sending it to
+// another business component declared at runtime in the property TargetComponentNamespublic class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
 
     public string TargetComponentNames; // Comma separated list of target production components. Set at runtime.
 
 
-    public override void OnTearDown() {} // PEX abstract method. Must override.
-    public override void OnInit() {
-    
-    } // PEX abstract method. Must override.
+    public override void OnTearDown() {} // Abstract method in PEX superclass. Must override.
+    public override void OnInit() { } // Abstract method in PEX superclass. Must override.
 
     // OnProcessInput is called at an interval specified in the 'call interval' setting in the production.
     public override object OnProcessInput(object input)  {
