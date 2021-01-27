@@ -11,7 +11,7 @@ namespace Finance {
 // This class is for a PEX business service that reads a transaction request message from a file. It then parses the 
 // file format of that message and converts it into a Finance.TransactionRequest message object, before sending it to
 // another business component declared at runtime in the property TargetComponentNamespublic class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
-
+public class FromFileTransaction : InterSystems.EnsLib.PEX.BusinessService {
     public string TargetComponentNames; // Comma separated list of target production components. Set at runtime.
 
 
