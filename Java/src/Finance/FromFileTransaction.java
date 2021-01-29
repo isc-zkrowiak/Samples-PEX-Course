@@ -25,35 +25,11 @@ public class FromFileTransaction extends com.intersystems.enslib.pex.BusinessSer
       File file = new File(path);
 
       
-      // create scanner object to read file lines.
+      // Create scanner object to read file lines.
       Scanner reader = new Scanner(file);
 
-      // Instantiate TransactionRequest message object.
-      TransactionRequest request = new TransactionRequest();
-
-      // Set fields of message. An actual implementation would need to verify that
-      // message structure is valid.
-      request.TransactionAmount = Float.parseFloat(reader.nextLine().split(":")[1]);
-      String tempString = reader.nextLine();
-
-      // Break apart nested PaymentProfile objects and populate fields.
-      String[] tempStringArray = tempString.split(":");
-      String[] PaymentProfile = tempStringArray[1].split("\\|");
-      request.PayFrom.AccountNumber  = Integer.parseInt(PaymentProfile[0]);
-      request.PayFrom.RoutingNumber = Integer.parseInt(PaymentProfile[1]);
-      request.PayFrom.UserName = PaymentProfile[2];
-
-      // Repeat for PayTo property.
-      tempString = reader.nextLine();
-      tempStringArray = tempString.split(":");
-      PaymentProfile = tempStringArray[1].split("\\|");
-      request.PayTo.AccountNumber  = Integer.parseInt(PaymentProfile[0]);
-      request.PayTo.RoutingNumber = Integer.parseInt(PaymentProfile[1]);
-
-      // Set remaining fields.
-      request.PayTo.UserName = PaymentProfile[2];
-      request.FromCurrency = reader.nextLine().split(":")[1];
-      request.ToCurrency = reader.nextLine().split(":")[1];
+      // Instantiate TransactionRequest message object using constructor, passing in each line as an argument.
+      TransactionRequest request = new TransactionRequest(reader.nextLine(),reader.nextLine(),reader.nextLine(),reader.nextLine(),reader.nextLine());
 
       reader.close();
 
