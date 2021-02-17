@@ -13,16 +13,15 @@ public class PaymentProfile extends com.intersystems.enslib.pex.Message {
     public PaymentProfile(String profile) {
 
         // Break apart nested PaymentProfile objects and populate fields.
-
         // Create array to separate key from value using colon as splitting character
-        String[] tempStringArray = profile.split(":");
+        String tempStringArray = profile.split(":")[1];
 
-        // Create second array that splits the value by pipe (|) delimeter character
-        String[] PaymentProfile = tempStringArray[1].split("\\|");
+        // Create second array that splits the value by pipe (|) delimiter character
+        String[] FPaymentProfile = tempStringArray.split("\\|");
 
         // Assign fields to the appropriate properties in this object
-        this.AccountNumber  = Integer.parseInt(PaymentProfile[0]);
-        this.RoutingNumber = Integer.parseInt(PaymentProfile[1]);
-        this.UserName = PaymentProfile[2];
+        this.AccountNumber  = Integer.parseInt(FPaymentProfile[0]);
+        this.RoutingNumber = Integer.parseInt(FPaymentProfile[1]);
+        this.UserName = FPaymentProfile[2];
     }
 }

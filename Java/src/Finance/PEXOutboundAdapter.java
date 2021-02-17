@@ -30,7 +30,7 @@ public class PEXOutboundAdapter extends  com.intersystems.enslib.pex.OutboundAda
         
         // Generate file name from current DateTime.
         Date today = new Date();
-        SimpleDateFormat Formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        SimpleDateFormat Formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         String DateString = Formatter.format(today);
 
         // Append to qualified file path.

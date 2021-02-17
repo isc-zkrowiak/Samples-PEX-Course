@@ -25,7 +25,7 @@ namespace Finance {
                 FilePath = FilePath + Path.DirectorySeparatorChar;
             }
             // Generate file name from current DateTime.
-            string today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+            string today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss");
             
             // Append to qualified file path.
             string OutputPath = FilePath + today;
