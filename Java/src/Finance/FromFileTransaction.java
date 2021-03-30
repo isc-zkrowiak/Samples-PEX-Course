@@ -7,13 +7,15 @@ import Finance.TransactionRequest; // Import the Transaction message to send thr
 
 
 
-// This class is for a PEX business service that reads a transaction request message from a file.
+// This class is for a PEX business service that reads a transaction request message from a file. It then parses the 
+// file format of that message and converts it into a Finance.TransactionRequest message object, before sending it to
+// another business component declared at runtime in the property TargetComponentNames
 public class FromFileTransaction extends com.intersystems.enslib.pex.BusinessService {
     public String TargetComponentNames; // Comma separated list of target production components. Set at runtime.
     
 
-    public void OnTearDown() {} // PEX abstract method. Must override.
-    public void OnInit() {} // PEX abstract method. Must override.
+    public void OnTearDown() {} // Abstract method in PEX superclass. Must override.
+    public void OnInit() {} // Abstract method in PEX superclass. Must override.
 
     // OnProcessInput is called at an interval specified in the 'call interval' setting in the production.
     public java.lang.Object OnProcessInput(java.lang.Object messageInput) throws java.lang.Exception {
@@ -23,35 +25,11 @@ public class FromFileTransaction extends com.intersystems.enslib.pex.BusinessSer
       File file = new File(path);
 
       
-      // create scanner object to read file lines.
+      // Create scanner object to read file lines.
       Scanner reader = new Scanner(file);
 
-      // Instantiate TransactionRequest message object.
-      TransactionRequest request = new TransactionRequest();
-
-      // Set fields of message. An actual implementation would need to verify that
-      // message structure is valid.
-      request.TransactionAmount = Float.parseFloat(reader.nextLine().split(":")[1]);
-      String tempString = reader.nextLine();
-
-      // Break apart nested PaymentProfile objects and populate fields.
-      String[] tempStringArray = tempString.split(":");
-      String[] PaymentProfile = tempStringArray[1].split("\\|");
-      request.PayFrom.AccountNumber  = Integer.parseInt(PaymentProfile[0]);
-      request.PayFrom.RoutingNumber = Integer.parseInt(PaymentProfile[1]);
-      request.PayFrom.UserName = PaymentProfile[2];
-
-      // Repeat for PayTo property.
-      tempString = reader.nextLine();
-      tempStringArray = tempString.split(":");
-      PaymentProfile = tempStringArray[1].split("\\|");
-      request.PayTo.AccountNumber  = Integer.parseInt(PaymentProfile[0]);
-      request.PayTo.RoutingNumber = Integer.parseInt(PaymentProfile[1]);
-
-      // Set remaining fields.
-      request.PayTo.UserName = PaymentProfile[2];
-      request.FromCurrency = reader.nextLine().split(":")[1];
-      request.ToCurrency = reader.nextLine().split(":")[1];
+      // Instantiate TransactionRequest message object using constructor, passing in each line as an argument.
+      TransactionRequest request = new TransactionRequest(reader.nextLine(),reader.nextLine(),reader.nextLine(),reader.nextLine(),reader.nextLine());
 
       reader.close();
 

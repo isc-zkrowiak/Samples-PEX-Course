@@ -3,12 +3,16 @@ using System.IO;  // Import the File class
 
 namespace Finance {
 
-    // This class is for a PEX outbound adapter.
+    // This class implements the PEX OutboundAdapter super class. It takes requests from PEX components, usually
+    // Business Operations, and abstracts connection logic to external systems. In this case, the two Business Operation
+    // Components in the production, Finance.ToPayFromBank and Finance.ToPayToBank, both use the Invoke() method
+    // To call the WriteToFile() method implemented here.
     class PEXOutboundAdapter :  InterSystems.EnsLib.PEX.OutboundAdapter {
 
         public string FilePath; // Path to write output file.
-        public override void OnTearDown() {}
-        public override void OnInit() {}
+        public override void OnTearDown() {} // Abstract method in PEX superclass. Must override.
+        public override void OnInit() {} // Abstract method in PEX superclass. Must override.
+
 
         public object WriteToFile(object input) {
             
@@ -21,7 +25,7 @@ namespace Finance {
                 FilePath = FilePath + Path.DirectorySeparatorChar;
             }
             // Generate file name from current DateTime.
-            string today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+            string today = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss");
             
             // Append to qualified file path.
             string OutputPath = FilePath + today;

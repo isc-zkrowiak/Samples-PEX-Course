@@ -2,22 +2,23 @@ package Finance;
 import Finance.TransactionRequest;
 import Finance.TransactionResponse;
 
-// This class is for a PEX business process that sends a request to the paying bank, then, if 
-// it receives an approval response, sends  a request to the receiving bank.
+// This class is for a PEX business process that receives a message from a business service (Finance.FromFileService).
+// It then sends a request to the paying bank (Finance.ToPayFromBank) and awaits a response. If 
+// it receives an approval response, sends  a request to the receiving bank (Finance.ToPayToBank).
 public class ProcessPaymentRequest extends com.intersystems.enslib.pex.BusinessProcess {
 
-    // PEX abstract method. Must override.
+    // Abstract method in PEX superclass. Must override.
     public Object OnComplete(Object object,Object object2) {return null;}
 
-    // PEX abstract method. Must override.
+    // Abstract method in PEX superclass. Must override.
     public java.lang.Object OnResponse(java.lang.Object request, java.lang.Object response, java.lang.Object callRequest, java.lang.Object callResponse, java.lang.String completionKey) throws java.lang.Exception {
         return null;
     }
 
-    // PEX abstract method. Must override.
+    // Abstract method in PEX superclass. Must override.
     public void OnTearDown(){}
 
-    // PEX abstract method. Must override.
+    // Abstract method in PEX superclass. Must override.
     public void OnInit(){}
 
 

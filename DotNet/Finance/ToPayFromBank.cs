@@ -3,12 +3,14 @@ using System.Text; // Import class to deal with enumerators.
 
 namespace Finance{
 
-    // This class is for the PEX business operation communicating with the paying bank
+    // This class is for the PEX business operation communicating with the paying bank.
+    // It receives a message from a Business Process, Finance.ProcessPaymentRequest, writes an output 
+    // message to a file, then returns an 'approval' response (Finance.TransactionResponse).
     public class ToPayFromBank : InterSystems.EnsLib.PEX.BusinessOperation {
 
 
-        public override void OnTearDown() {} // PEX abstract method. Must override.
-        public override void OnInit(){} // PEX abstract method. Must override.
+        public override void OnTearDown() {} // Abstract method in PEX superclass. Must override.
+        public override void OnInit(){} // Abstract method in PEX superclass. Must override.
 
 
         public override object OnMessage(object input) {

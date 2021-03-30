@@ -10,7 +10,7 @@
         "projectUniqueName": "/irisdev/app/DotNet/DotNet.csproj",
         "projectName": "DotNet",
         "projectPath": "/irisdev/app/DotNet/DotNet.csproj",
-        "packagesPath": "/root/.nuget/packages/",
+        "packagesPath": "/home/irisowner/.nuget/packages/",
         "outputPath": "/irisdev/app/DotNet/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -18,7 +18,7 @@
         ],
         "configFilePaths": [
           "/irisdev/app/DotNet/nuget.config",
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/irisowner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"

@@ -4,22 +4,23 @@ using Finance;
 namespace Finance{
 
 
-    // This class is for a PEX business process that sends a request to the paying bank, then, if 
-    // it receives an approval response, sends  a request to the receiving bank.
+    // This class is for a PEX business process that receives a message from a business service (Finance.FromFileService).
+    // It then sends a request to the paying bank (Finance.ToPayFromBank) and awaits a response. If 
+    // it receives an approval response, sends  a request to the receiving bank (Finance.ToPayToBank).
     public class ProcessPaymentRequest : InterSystems.EnsLib.PEX.BusinessProcess {
 
-        // PEX abstract method. Must override.
+        // Abstract method in PEX superclass. Must override.
         public override object OnComplete(object input, object input2) {return null;} 
 
-        // PEX abstract method. Must override.
+        // Abstract method in PEX superclass. Must override.
         public override object OnResponse(object request, object response, object callRequest, object callResponse, string completionKey) {
             return null;
         }
 
-        // PEX abstract method. Must override.
+        // Abstract method in PEX superclass. Must override.
         public override void OnTearDown(){}
 
-        // PEX abstract method. Must override.
+        // Abstract method in PEX superclass. Must override.
         public override void OnInit(){}
 
 

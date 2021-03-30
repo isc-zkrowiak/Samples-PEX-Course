@@ -5,13 +5,15 @@ import Finance.TransactionRequest;
 import Finance.PaymentProfile;
 import java.lang.StringBuffer;
 
-// This class is for a PEX business operation communicating with the receiving bank
+// This class is for a PEX business operation communicating with the receiving bank.
+// It receives a request from the Business Process (Finance.ProcessPaymentRequest)
+// and constructs a message to write a file.
 public class ToPayToBank extends com.intersystems.enslib.pex.BusinessOperation {
     
 
 
-    public void OnTearDown() {} // PEX abstract method. Must override.
-    public void OnInit(){} // PEX abstract method. Must override.
+    public void OnTearDown() {} // Abstract method in PEX superclass. Must override.
+    public void OnInit(){} // Abstract method in PEX superclass. Must override.
 
     public java.lang.Object OnMessage(java.lang.Object object) throws java.lang.Exception {
 
